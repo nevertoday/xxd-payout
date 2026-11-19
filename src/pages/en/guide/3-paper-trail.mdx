@@ -1,5 +1,69 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 3
+need: "A folder on your computer, with something added every time you're paid"
+tldr: "Every time you're paid, keep what proves it was a real transaction: the contract or order, the invoice you sent, the delivery record, the platform statement and the deposit record. How much PayPal cross-border collection lets you settle, how much WorldFirst lets you convert, and whether a bank handles you above the quota all depend on them. They have to be genuine."
+description: "Why to keep records from your first payment: 贝宝支付's settle-able amount is worked out from your transaction records, WorldFirst needs an RMB settlement quota or a settlement order before converting, and above the USD 50,000 quota banks look at the documents in Article 10 of the Implementing Rules; what to keep and how to file it so you can find it; why every record has to be genuine."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+At the end of the year you add it up, and what you've been paid from abroad is close to USD 50,000. You take your ID to the bank to settle it, and the clerk looks up and asks, "What are these payments for? Do you have a contract or proof of payment?" You scroll through your phone. That client's email from a year ago is archived somewhere, and the only design file left is the final version. None of this has to happen, as long as you keep a copy of things from the day the first payment arrives.
+
+<mark><strong>Every time you're paid, keep what proves it was a real transaction: the contract or order, the invoice, the delivery record, the platform statement. When it's time to turn the money into RMB, these are what the provider and the bank go by.</strong></mark>
+
+## Who will look at these records
+
+SAFE's guide is plain about it. An individual's current-account FX business must have a real, lawful transaction behind it ([Current Account FX Business Guide, Article 54](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). For you, that means three places will ask.
+
+**贝宝支付 cross-border collection.** The balance you see in PayPal can't necessarily all be settled into RMB. How much you can settle is your "可收款额度" (settle-able amount). PayPal's FAQ says transactions with complete information and a real, lawful cross-border background are treated as compliant, the system estimates this amount from your past account information and transaction records, it usually updates once a day, and it's never higher than your available balance. PayPal suggests adding details such as product names and shipping information to your transactions. If the amount is too low, you can go to the "原始订单中心" (original order centre), download the template and fill in the original order details ([cross-border collection FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)). The agreement also says that when the buyer is outside China, the transaction must have real content, and you must give PayPal a full description of the goods and services you sell, your return and refund rules and the delivery details. PayPal may collect transaction information and report it to the People's Bank of China and SAFE as the law requires ([PayPal China cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+Behind this is a rule SAFE sets for <Term k="支付机构" />: they must check that transactions are real, and the transaction data should in principle include the name and type of the goods or service, the quantity, currency, amount, both parties and their countries, and the order time ([Guide, Article 130](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). So when PayPal asks you for these, it isn't being difficult on purpose.
+
+**WorldFirst.** Before a cross-border e-commerce account can convert money into RMB, you need an "人民币结汇额度" (RMB settlement quota), which is the amount reviewed and found to have a real, lawful trade background, and you apply for it by uploading transaction details ([WorldFirst pricing page FAQ](https://www.worldfirst.com.cn/cn/pricing/)). Its B2B trade account works the same way. Each RMB settlement has to be tied to a settlement order, and if you don't have one, you first create a new order under "收款来源管理" (payment source management) ([How to choose a settlement order](https://www.worldfirst.com.cn/content/articles/b2b_gbl_portal/am3kofip)).
+
+**Your bank.** When USD reaches your bank account and you <Term k="结汇" /> there, within the <Term k="年度便利化额度" /> your ID is enough. That USD 50,000 is a facilitation quota, not a ceiling ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). Above it, or if you want a settlement that doesn't use the quota, you bring documents showing where the money came from, with the transaction amounts ([Guide, Article 56](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Article 10 of the Implementing Rules lists documents by type of income: service income and income from proprietary rights and licensing need proof of payment, an agreement or a contract, and wages need an employment contract and proof of income ([Implementing Rules](http://m.safe.gov.cn/safe/2007/0105/5320.html)). Exactly which ones and in what form is for the bank to decide for your case. It can refuse a transaction whose authenticity is in doubt, and if it does, it must tell you why and how to appeal ([Guide, Article 68](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+One user on X makes the same point. A Chinese bank receiving a large transfer from abroad may ask for proof of where it came from, so have contracts, invoices and payslips ready and show them when asked ([@noahduck283](https://x.com/noahduck283/status/2063983483903689128)). The first half of that post, about Wise sending money to Alipay and WeChat, doesn't match Wise's rules for senders in China, so don't follow that part. See [step 1](/en/guide/1-choose/).
+
+## What to keep
+
+For every payment, try to have all of these. They back each other up, and together they show who paid you, for what, and how much.
+
+- **The contract or order.** If you freelance, the contract or agreement with your client, or an email that confirms the work and the price. If you sell online, the order on the platform.
+- **The invoice you sent.** It states the date, the client, what you charged for, the amount and the currency. This isn't the same thing as a Chinese VAT fapiao. Whether you need to issue one and how is a tax question. This site doesn't cover tax, so ask your local tax authority or a professional.
+- **The delivery record.** The files you handed over and the client's email saying they got them. If you ship goods, the shipping and tracking details.
+- **Payment records and platform statements.** PayPal transaction details, the platform's payout statement, your Wise or Payoneer account statement, and the deposit record when the money reaches your Chinese bank.
+
+Article 10 of the Implementing Rules gives a rough idea of which records go with which kind of income. But which category your money falls into is for the bank handling it to decide (Guide, Article 68), and we don't pick one for you. So keep more rather than less, and don't wait for the bank to ask before you go looking.
+
+<Callout type="no">
+Every record has to be genuine, with the dates, amounts and contents as they really happened. Article 7 of the Measures on Individual FX says individuals must not use false commercial documents or records to get around authenticity checks, or split amounts to get around the quota ([Measures, Article 7](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)). 贝宝支付's agreement also lists giving false, inaccurate or misleading information as a restricted activity.
+</Callout>
+
+## How to file it so you can find it
+
+Keeping records is half of it. The other half is finding them a year later. The method is simple. Make one folder with a subfolder for each month, and a small folder for each payment named "date_payer_amount", holding the contract, invoice, delivery emails and payment screenshots. Then keep a simple sheet with one row per payment: date received, payer, what it was for, amount and currency, which account it went into, and which contract and invoice it matches.
+
+That sheet earns its keep at the end of the year. You can see at a glance how much you received, which payments you've settled and which are still sitting in an account, and when you go to the bank or add order details in PayPal, you can look things up straight from it. Don't leave emails only in your inbox, either. Platforms change and old records can disappear, so export the important ones as PDFs into the same folder.
+
+Do this, and you have a record you can hand over at any time. Next, turn the money into RMB on your card.
+
+## Stuck?
+
+<Q q="My PayPal balance is fine, but my settle-able amount is 0.">
+<p>The FAQ says the amount is estimated from your transaction records, usually updates once a day, and is never higher than your available balance. Add product names and shipping details to your transactions first, then check whether the "原始订单中心" (original order centre) lists orders for you to complete, and fill them in using the template (<a href="https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh">FAQ</a>). If it's still wrong, contact PayPal China support.</p>
+</Q>
+<Q q="My client won't sign a contract. We only agreed the price by email.">
+<p>Article 10 of the Implementing Rules says "proof of payment, an agreement or a contract." Whether an email exchange counts as an agreement is for the bank to decide (Guide, Article 68), and we can't answer for the bank. Before you go, take what you have and ask your bank. For future work, ask the client to reply with an email that confirms the work and the amount.</p>
+</Q>
+<Q q="I didn't keep records for some earlier payments. What now?">
+<p>Recover what you can. Search your email for the client's confirmations, download past statements from the platform, and export transaction details from PayPal. Whatever you add has to be a record of what really happened at the time, never something made up afterwards.</p>
+</Q>
+<Q q="Does a platform payout statement count as a record?">
+<p>It's part of your payment records. Article 66 of the guide says that for an individual doing cross-border e-commerce, providing documents showing transaction amounts or the transaction data means the settlement doesn't use the annual quota. Which kind your bank accepts, ask your bank.</p>
+</Q>
+
+<Checkpoint id="s3" items={["I've set up a folder, and each payment gets a contract or order, an invoice, a delivery record and a payment record", "I know PayPal's settle-able amount, WorldFirst's settlement quota and the bank's review above the quota all go by these records", "Every record I keep is something that really happened"]} />

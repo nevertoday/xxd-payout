@@ -1,5 +1,91 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 1
+need: "The two things you wrote down in step 0: what you're paid for, and how your payer can pay"
+tldr: "Let your payer choose the account. Buyers who pay by PayPal mean a 贝宝支付 (PayPal China) personal seller account; selling on a marketplace means Payoneer or WorldFirst, whichever the platform supports; clients who pay by bank transfer mean receiving accounts at Wise or Payoneer. PayPal Hong Kong, US PayPal and Stripe aren't open to people living in mainland China."
+description: "Choosing a receiving account by how you're paid: what a 贝宝支付 personal seller account, a Payoneer individual account, a WorldFirst individual e-commerce account and a Wise personal account each take, whether someone living in mainland China can open it, and how the money gets home; a comparison table with what each provider's pages leave unconfirmed; the accounts you can't open from the mainland."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Say you have two clients this month. One is a small studio in the US that's used to paying by PayPal, and their message just says "send me your PayPal." The other is a company in Germany whose finance team only does bank transfers and wants a set of account details. You spend an evening on tutorials and come out more confused, because each one recommends whatever the author happens to use.
+
+<mark><strong>You don't have to pick a receiving account out of a pile of names. Let your payer decide. However they pay, you open an account that can catch that kind of payment.</strong></mark>
+
+A <Term k="收款账户" /> is where money from abroad lands first, and it's in your own name. This step matches each way of paying from [step 0](/en/guide/0-map/) to an account. Everything below comes from the providers' own pages, and every provider still leaves some things unstated. The last column of the table lists them, so ask before you start.
+
+## Buyers pay by PayPal: open a 贝宝支付 personal seller account
+
+Mainland China now has two PayPal account systems, so start by telling them apart. The new one is with 贝宝支付（北京）有限公司 (PayPal China), a non-bank <Term k="支付机构" /> holding a payment licence from the People's Bank of China ([PayPal China fee centre footer](https://www.paypal.cn/portal/fees?locale.x=zh)). The old one is with PayPal Pte. Ltd. in Singapore, at `paypal.com/c2`.
+
+The old system is narrowing. The 中国大陆 (mainland China) section of PayPal's user agreement says personal accounts registered after 30 June 2026 can only ask for and receive friends-and-family payments, not payments for goods and services, and can't be changed into business accounts, and that people who already hold a business account must also open one at 贝宝支付 ([PayPal user agreement, last updated 2026-06-30](https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2)). So if you want PayPal for buyers abroad, the account to open now is at 贝宝支付.
+
+贝宝支付 currently offers only one account type, the business account, and an individual seller signs up as a "个人类别的企业用户" (a business user of the individual type). The word "business" is in the name, but the person opening it can be an individual. The agreement says you must be a Chinese resident aged 18 or over, and the account holder must be a China tax resident only, never a US tax resident ([PayPal China cross-border user agreement, last updated 2026-05-28](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). Money you receive can be settled into RMB on your linked bank card with PayPal跨境收款 (cross-border collection), which [step 4](/en/guide/4-bring-home/) covers.
+
+The same agreement has a rule about how you're paid. A seller must not ask buyers to pay as a personal transaction, which usually means the "send to friends or family" option, and if you do, PayPal may remove your ability to accept those payments. So when a client asks "can I pay you as friends and family?", the answer is no. Ask them to pay as a normal purchase of goods or services.
+
+One thing needs asking up front. The agreement talks about receiving "payments for the sale of goods or services," and the cross-border collection FAQ accepts a social-media page, a video channel or an app link as your store link ([cross-border collection FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)). But whether a personal seller account can receive service income, like freelance work, software subscriptions or creator revenue, and settle it in RMB, PayPal's pages don't say. Ask PayPal China or your bank before you rely on it.
+
+## You sell on a marketplace: use Payoneer or WorldFirst, whichever it supports
+
+Where a marketplace sends your money is up to the marketplace. Payoneer's guide for mainland individual accounts has a table. Amazon, eBay, TikTok Shop, Shopee and others take both individual and company accounts, while Walmart, Lazada and SHEIN take company accounts only. It also warns that platforms change their rules, so the platform's own requirements win ([Payoneer individual account guide, last modified 2025-04-01](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)).
+
+Payoneer's own advice is to open an individual account if you only have a personal bank account and don't own a business, and a company account if you have a corporate account. The same guide says individual and company accounts usually have the same features and fees on marketplaces. You can withdraw to a mainland bank account in your name, in RMB ([Payoneer: RMB withdrawals](https://www.payoneer.com/zh-hans/marketplace/fx-foreign-exchange/)).
+
+WorldFirst (万里汇) is run in China by 蚂蚁国际商业（上海）有限公司 ([WorldFirst pricing page footer](https://www.worldfirst.com.cn/cn/pricing/)). Its cross-border e-commerce accounts come as a "个人电商账号" (individual e-commerce account) or a "公司电商账号" (company e-commerce account), and individuals can open the first ([WorldFirst registration and verification, 2026-10-29](https://www.worldfirst.com.cn/content/articles/b2c_portal/vyrbjs5f)). The B2B trade account is for businesses only, with sole proprietorships (个体工商户) counted as businesses ([WorldFirst B2B verification documents](https://www.worldfirst.com.cn/content/articles/b2b_gbl_portal/3konnrxk)). You can withdraw RMB to your own bank card or Alipay ([WorldFirst: adding a withdrawal recipient, 2026-04-10](https://www.worldfirst.com.cn/content/articles/b2c_portal/ug_es5jx)).
+
+## Clients pay by bank transfer: use a receiving account at Wise or Payoneer
+
+If a client only does bank transfers, you need a set of foreign-currency account details to give them. A Wise personal account is one option. Wise lists China among the places where you can hold money ([Wise: where you need to live to hold money](https://wise.com/help/articles/2813542/where-do-i-need-to-live-to-hold-money-with-wise)), and a personal account with a China address can get USD account details. A Wise Business account with an address in China can't get USD details ([Wise: can I get USD account details?](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)). With USD details, clients in the US pay you by ACH or domestic wire, and clients elsewhere pay you by Swift.
+
+Once the money is in Wise, though, don't count on Wise turning it into RMB and sending it to your Alipay or WeChat. Wise's help pages say personal senders can send to Alipay from every supported country except China, and China isn't on the sender lists for WeChat or UnionPay either ([Alipay](https://wise.com/help/articles/2kTApouGnjRj6JM1yduMIL/sending-cny-via-alipay), [WeChat](https://wise.com/help/articles/1bd1dHKW4uB8p0lnFbzgoZ/how-to-send-and-receive-cny-via-wechat), [UnionPay](https://wise.com/help/articles/5rpQjZ2pueSOeIh5s2mh7w/how-to-send-and-receive-cny-via-unionpay)). We haven't confirmed how the app behaves for an account registered with a mainland address, so leave these routes out of your plans. The way home is a <Term k="Swift 电汇" />, sending USD to your own bank account in China and settling it at your bank. See the how-to [Move USD from Wise to your Chinese bank card](/en/howto/wise-to-bank/).
+
+Payoneer also offers receiving accounts in several currencies. Your client transfers into one, and you then withdraw RMB to your card in China ([Payoneer pricing](https://www.payoneer.com/pricing/)). Its sign-up guide is written for online sellers and asks for a store link. If you don't have a store yet, the guide says you can contact support after registering to add one.
+
+## The comparison table
+
+The table is ordered by who pays you. "Can you open it" means someone who really lives in mainland China, signing up with their own ID and real address.
+
+| Who pays you | Receiving account | Can you open it from mainland China? | How the money gets home | Not yet stated by the provider |
+| --- | --- | --- | --- | --- |
+| Buyers paying by PayPal | 贝宝支付 personal seller account (个人类别的企业用户) | Yes, if you're a Chinese resident aged 18+ and a China tax resident only ([agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)) | Cross-border collection settles RMB to your card; you can also wire USD home | Whether it can take service income and settle it in RMB; whether settlements count toward the USD 50,000 quota |
+| Marketplaces | Payoneer individual account | Yes, if you only have a personal bank account and don't own a business ([guide](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)) | RMB withdrawal to a mainland bank account in your name | Whether a freelancer with no store can open one; the current fee for RMB withdrawals; whether they count toward the quota |
+| Marketplaces | WorldFirst individual e-commerce account | Yes ([registration and verification](https://www.worldfirst.com.cn/content/articles/b2c_portal/vyrbjs5f)) | RMB withdrawal to your own bank card or Alipay, once you have an RMB settlement quota | Whether it can take service income; the full fee table |
+| Clients paying by bank transfer | USD account details on a Wise personal account | Yes, a personal account with a China address gets USD details ([Wise](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)) | Swift USD to your own bank account in China, then settle at the bank | Whether a personal account can take business income |
+| Clients paying by bank transfer | Payoneer receiving account | Yes, same conditions as the Payoneer individual account above | RMB withdrawal to a mainland bank account in your name | Same as the Payoneer individual account above |
+
+None of the provider pages we checked state the things in the last column. That doesn't mean the answer is no. It just means nobody has confirmed it for you, so don't start taking payments because someone said "it works." Before you open the account, write to the provider or ask your bank, and keep the reply. The USD 50,000 in the table is each person's annual facilitation quota for settling, not a ceiling, and real income above it can still be settled with documents ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). [Step 4](/en/guide/4-bring-home/) explains.
+
+## Accounts you can't open from the mainland
+
+Some accounts that tutorials keep mentioning can't be opened by someone living in mainland China with their real details. It isn't that you haven't found the right page:
+
+- **PayPal Hong Kong.** The agreement requires an individual to be a Hong Kong SAR resident aged 18 or over, and a business to be located and operating in Hong Kong ([PayPal Hong Kong user agreement](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=zh_HK)).
+- **US PayPal.** An individual must be a resident of the United States or one of its territories and at least 18 ([PayPal US user agreement](https://www.paypal.com/us/legalhub/paypal/useragreement-full)). For why you shouldn't open one with a US address you don't live at, see [Thinking of a US PayPal account? Read this first](/en/howto/us-paypal/).
+- **Stripe.** Mainland China isn't on Stripe's list of countries where you can open an account. Hong Kong is ([Stripe global](https://stripe.com/global)).
+- **PingPong.** Its terms say the service is for commercial and business activity and forbid using it for personal or household purposes or as a consumer ([PingPong terms](https://www.pingpongx.com/zh/termsandConditions?cb=true)), and its public pages have no fee table, so we don't cover it as an option for individuals.
+
+<Callout type="no">
+Opening any of these with someone else's name, address or account is forbidden by the agreements themselves. 贝宝支付's agreement lists opening an account "using information that isn't your own (such as a name, address or email address)" and using another person's PayPal account as restricted activities (<a href="https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh">PayPal China cross-border user agreement</a>).
+</Callout>
+
+If you have both kinds of client, open one account for each way of paying. Each one goes in your own name, and the next step covers what to have ready when you open it.
+
+## Stuck?
+
+<Q q="My client asks if they can pay me as PayPal friends and family.">
+<p>Don't take it that way. 贝宝支付's agreement says a seller must not ask buyers to pay as a personal transaction (usually the "send to friends or family" option), or PayPal may remove your ability to accept those payments (<a href="https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh">agreement</a>). Ask your client to pay as a purchase of goods or services.</p>
+</Q>
+<Q q="I only freelance and have no store, but Payoneer asks for a store link.">
+<p>Payoneer's guide says that if you haven't opened a store on a marketplace yet, you can contact support after registering to add the link. Whether a freelancer with no store can open an individual account, its pages don't say, so ask Payoneer support first (the guide gives the hotline 400-841-6666).</p>
+</Q>
+<Q q="The marketplace I sell on only takes company accounts.">
+<p>In Payoneer's table, Walmart, Lazada and SHEIN want a company account. Registering a company or a sole proprietorship is outside what this site covers, so start with the marketplace's own seller requirements.</p>
+</Q>
+<Q q="I already have an old PayPal personal account. Can I still use it?">
+<p>It depends on when you registered it. The 中国大陆 section of PayPal's user agreement limits personal accounts registered after 30 June 2026 from taking goods-and-services payments, and business account holders must also open an account at 贝宝支付 (<a href="https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2">PayPal user agreement</a>). If you're not sure, log in and check your notices, or ask PayPal China.</p>
+</Q>
+
+<Checkpoint id="s1" items={["I've picked the account to open based on how my payer can pay", "I know people living in mainland China can't open PayPal Hong Kong, US PayPal or Stripe", "I'll ask about anything in the table's last column that affects me before I open the account"]} />
