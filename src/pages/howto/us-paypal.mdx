@@ -21,7 +21,7 @@ PayPal 美国的用户协议开头就写了谁能开户：个人必须是美国�
 
 同一份协议在受限活动里列了一条：提供关于你的身份、账户或业务的虚假、不准确或误导性信息。PayPal 可以因此采取的措施里，有一条是扣住你账户里的余额，最长 180 天；有法院命令的，还可以更久。
 
-两条放在一起，答案就很清楚了。你住在中国大陆，按这份协议本来就不符合开户条件；要开，就只能填一个你并不住的地址，或者别的不真实的信息，而这正是协议禁止的事。钱一旦被扣住，客户付的款你可能半年都动不了。
+两条放在一起，答案就很清楚了。你住在中国大陆，按这份协议本来就不符合开户条件；要开成，就得在地址或身份上提供不真实的信息，而这正是协议禁止的事。钱一旦被扣住，客户付的款你可能半年都动不了。
 
 ## 港区 PayPal、香港的 Stripe，也是同一个道理
 
@@ -37,9 +37,9 @@ Stripe 也一样。它的全球服务地区列表里有香港，没有中国大�
 
 **客户想用 PayPal 付。** 开一个贝宝支付的个人卖家账户（[paypal.cn](https://www.paypal.cn/)）。它能收海外买家用 PayPal 付的钱，比如结账、账单、付款链接，再通过 **PayPal跨境收款** 结算成人民币到你的银行卡。注册要邮箱、中国大陆的 11 位手机号、有效的身份证，还要做人脸识别（[个人卖家注册指南](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)）。一笔钱一路扣多少，看[100 美元的 PayPal 付款，最后到手多少](/howto/paypal-100/)。要留意的是，个人卖家账户能不能收接活、做内容这类服务收入并结算成人民币，官方页面没有写明，办之前先问 PayPal 中国。
 
-**客户想用银行转账付。** Wise 的个人账户用中国地址也能拿到美元收款信息，美国境内的 ACH 转账进来不收费，美国境内电汇 6.11 美元（截至 2026-11-19，[Wise 收款费用](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)）。钱怎么回国，看[Wise 里的美元怎么回到国内银行卡](/howto/wise-to-bank/)。Wise 个人账户能不能收经营性的收入，它的页面没有写明，也要先问 Wise。Payoneer 也有给中国大陆个人开的账户，适合只有个人银行账户、自己不是企业主的人（[Payoneer 个人账户注册指南](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)）。
+**客户想用银行转账付。** Wise 说，地址在可以开通对应币种的国家，个人或企业账户就能拿到美元收款信息；它的不可用国家名单里没有中国大陆，但企业账户那一条限制里列了中国，以你在 Wise 里实际看到的为准（截至 2026-11-19，[Wise 美元收款信息页面](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)）。美国境内的 ACH 转账进来不收费，美国境内电汇 6.11 美元（截至 2026-11-19，[Wise 收款费用](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)）。钱怎么回国，看[Wise 里的美元怎么回到国内银行卡](/howto/wise-to-bank/)。Wise 个人账户能不能收经营性的收入，它的页面没有写明，也要先问 Wise。Payoneer 也有给中国大陆个人开的账户，适合只有个人银行账户、自己不是企业主的人（[Payoneer 个人账户注册指南](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)）。
 
-**客户的平台用 Stripe 发款。** 你自己开不了 Stripe，可美国和英国的平台能通过 Stripe 的 Global Payouts，把美元电汇给在中国的个人，这项服务目前是 private preview（小范围预览）；它要的是你的邮箱、姓名、地址（不能是邮政信箱）、出生日期和电话（[Stripe 收款人要求](https://docs.stripe.com/global-payouts/recipient-requirements.md)）。费用由付款的平台定。
+**客户的平台用 Stripe 发款。** 你自己开不了 Stripe，可美国和英国的平台能通过 Stripe 的 Global Payouts，把美元电汇给在中国的个人，这项服务在文档里标注为 private preview（小范围预览，截至 2026-11-19）；它要的是你的邮箱、姓名、地址（不能是邮政信箱）、出生日期和电话（[Stripe 收款人要求](https://docs.stripe.com/global-payouts/recipient-requirements.md)）。
 
 <Callout type="tip">
 跟客户直接说你在中国大陆，然后给他一个他用得上的付款方式：贝宝支付账户发出的 PayPal 账单或付款链接，或者 Wise 的美元收款信息。
@@ -50,8 +50,8 @@ Stripe 也一样。它的全球服务地区列表里有香港，没有中国大�
 <Q q="客户说他只会用 PayPal 付。">
 那正好。贝宝支付的账户收的就是海外买家用 PayPal 付的钱，客户那边照常用他的 PayPal 付，不用管你在哪一区。你这边先确认个人卖家账户能不能收你这类收入。
 </Q>
-<Q q="网上说用中国护照也能注册香港的账户。">
-PayPal 香港要求个人是香港居民；Stripe 的帮助页（本站只有摘录）说以个人身份注册香港账户不接受非香港的身份证号码。护照不会让你变成香港居民，这条路不通。
+<Q q="网上说换一种证件也能开别区的账户。">
+PayPal 香港要求个人是香港居民；Stripe 的帮助页（本站只有摘录）说以个人身份注册香港账户不接受非香港的身份证号码。证件不会改变你住在哪里，这条路不通。
 </Q>
 <Q q="我已经有一个用美国地址开的 PayPal 账户了。">
 按 PayPal 美国用户协议，提供不真实的身份或账户信息属于受限活动，PayPal 可以扣住余额最长 180 天。本站不教怎么处理这种账户，也不是法律意见；别再往里收新的钱，账户的事直接问 PayPal。往后的收款，换成开在你自己名下、你真正住的地方的账户。
