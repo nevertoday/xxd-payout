@@ -1,5 +1,77 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 4
+need: "A receiving account that has money in it, a Chinese bank card in your name, and the records from step 3"
+tldr: "There are two ways home. Either the provider settles RMB straight to your card (PayPal cross-border collection, Payoneer, WorldFirst), or you wire USD to your own bank account in China and settle it at the bank (a PayPal wire withdrawal, a Wise Swift transfer). Settling at the bank uses your USD 50,000 facilitation quota, and above it you can still settle with documents. Whether the first way counts toward the quota, the official pages don't say."
+description: "Turning the money into RMB on your card: how PayPal cross-border collection, Payoneer and WorldFirst each pay RMB to your card and how long it takes; how a PayPal wire withdrawal and a Wise Swift transfer work, how to settle at the bank and what to say at the counter; the quota questions each route raises, and which are still unconfirmed."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Copy from "../../../components/Copy.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Your first USD 1,000 has finally landed in PayPal. Next to the balance there are several buttons. One says cross-border collection, another says withdraw to a bank account. Either one gets your money out, but they don't take the same road, they don't take the same fees, and they don't meet the same rules at the bank.
+
+<mark><strong>There are two ways home. Let the provider convert the money to RMB and pay it to your card, or wire USD to your own bank account in China and settle it at the bank. The two cost different amounts and meet the USD 50,000 quota in different ways.</strong></mark>
+
+This step covers how each route works, then the quota questions each one raises. What each leg costs is added up in [step 5](/en/guide/5-fees/).
+
+## Route one: the provider converts to RMB for you
+
+**贝宝支付's PayPal跨境收款 (cross-border collection).** It settles the money in your PayPal account in RMB to the Chinese bank account linked to your PayPal China account ([PayPal China fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). Each time you make a request, the page shows you the exchange rate used to convert it. As of 2026-11-19, the FAQ says the minimum per request is USD 20. Timing goes by Beijing time. Requests before 13:00 on a working day usually arrive the same day, requests after 13:00 move to the next working day, and requests on non-working days and holidays are pushed back too ([cross-border collection FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)). Hong Kong holidays delay it as well. In one PayPal China notice, collections submitted between 13:00 on 16 October and 23:59 on 19 October 2026 were held over a Hong Kong holiday and processed from 20 October at the earliest ([PayPal China announcements](https://www.paypal.cn/portal/announcements?locale.x=zh)). How much you can settle depends on the settle-able amount from step 3. Once you've signed up for cross-border collection, your existing withdrawal options still work.
+
+**Payoneer.** You can withdraw to an RMB account at a mainland Chinese bank in your name. Payoneer says it uses "the benchmark bank's real-time rate, or better," and that withdrawals keep running over holidays ([Payoneer: RMB withdrawals](https://www.payoneer.com/zh-hans/marketplace/fx-foreign-exchange/)). What it charges now for withdrawals to mainland banks isn't stated on its pages, so go by the Fees page in your account. Step 5 has more.
+
+**WorldFirst.** First add a recipient. Click **收款人管理** (recipient management) in the left sidebar, then **添加新的收款人** (add new recipient) at the top right, and choose **单个添加收款人** (add a single recipient). For a bank card, choose **银行卡** (bank card), **您自己的账户** (your own account) and the account type **个人** (personal), click **下一步** (Next), pick the bank's country or region and the currency, add a note and email, enter your payment password and click **提交** (Submit). For Alipay, choose **支付宝账号** (Alipay account), **付自己账户** (pay your own account) and **个人** (personal), then click **绑定支付宝** (link Alipay) and scan the code to authorise it ([WorldFirst: adding a withdrawal recipient, 2026-04-10](https://www.worldfirst.com.cn/content/articles/b2c_portal/ug_es5jx)). The page also lets you add other people's cards and Alipay accounts, but this site only covers withdrawing to your own. Before you can convert to RMB, you need the RMB settlement quota from step 3.
+
+## Route two: wire USD to your own bank, then settle
+
+**Wiring USD from PayPal.** As of 2026-11-19, PayPal's help page says a USD wire to a bank account in China has a minimum of USD 150, takes 3 to 7 working days and carries a fee on every withdrawal. Withdrawal details can only be entered in English or pinyin, and a request can't be cancelled once made. If the bank can't process it because the details are incomplete or wrong, the money comes back to PayPal within 7 to 14 working days, and a return fee may apply. Every withdrawal is reviewed, and problems can delay or stop it ([How do I withdraw money from my PayPal account?](https://www.paypal.com/c2/cshelp/article/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%88%91%E7%9A%84paypal%E8%B4%A6%E6%88%B7%E6%8F%90%E5%8F%96%E8%B5%84%E9%87%91%EF%BC%9F-help394)). As for the fee, PayPal's merchant fee page lists USD 35 per wire withdrawal to mainland China and says it applies to accounts opened at 贝宝支付 under the cross-border agreement ([PayPal merchant fees, last updated 2025-06-18](https://www.paypal.com/c2/business/paypal-business-fees?locale.x=zh_C2)), and the older accounts' personal fee page also lists USD 35 per withdrawal ([PayPal consumer fees, last updated 2021-07-30](https://www.paypal.com/c2/webapps/mpp/paypal-fees?locale.x=zh_C2)). The help page also notes that some bank rules vary by branch, so check with your bank before you withdraw.
+
+**Sending USD from Wise.** China is on Wise's list of countries it can send USD to by Swift ([Wise: where can I send USD by Swift?](https://wise.com/help/articles/2974947/what-countries-and-regions-can-i-send-usd-to-via-swift)), so you can send the USD in Wise by <Term k="Swift 电汇" /> to your own bank account in China. For the step-by-step, see the how-to [Move USD from Wise to your Chinese bank card](/en/howto/wise-to-bank/).
+
+**At the bank, settle it.** Once the USD is in your bank account, you can <Term k="结汇" /> at the bank, at the counter or through e-banking ([Guide, Article 55](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Taking Bank of China as an example, its personal settlement page says you can do it at the counter, in online banking, mobile banking, self-service machines or phone banking. In online banking you log in, click "结售汇" (FX settlement and purchase), choose the account, click "结汇" (settle) next to the foreign-currency balance and follow the prompts, and the rate is the bank's real-time quoted rate ([Bank of China: personal settlement](https://www.boc.cn/pbservice/pb4/200806/t20080626_758.html)). Whether your bank charges a fee for receiving the transfer from abroad, and how much, we found no official figure, so ask your bank.
+
+If you go to the counter and the clerk asks where the money came from, just tell it straight. For example:
+
+<Copy id="counter" title="What you can say at the counter" code="我在海外平台上接设计的活，这几笔是客户付的服务费，合同、账单和付款记录我都带来了，想把这些美元结成人民币。(I take design work through overseas platforms. These payments are service fees from my clients, and I've brought the contracts, invoices and payment records. I'd like to settle this USD into RMB.)" />
+
+Swap "design" for the work you actually do, and "contracts, invoices" for what you actually bring. Don't describe the purpose as something it isn't. The next section explains why.
+
+## The two routes meet the quota differently
+
+**Settling at the bank within the quota takes only your ID.** Each person has an annual <Term k="年度便利化额度" /> of USD 50,000 for settling, plus a separate one for buying foreign currency, and within it you settle on your own ID ([Guide, Articles 54 and 55](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Bank of China's page adds that the quota can't be carried across calendar years, so whatever you don't use one year doesn't move to the next.
+
+**Going over it doesn't mean you can't settle.** The USD 50,000 is a facilitation quota, not a ceiling, and real, lawful current-account settlements have no amount limit ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). With your ID and documents showing where the money came from, with the amounts, you can settle without using the quota ([Guide, Article 56](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)), and for cross-border e-commerce, documents showing transaction amounts or the transaction data mean the quota isn't used either ([Guide, Article 66](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). For what to bring, see step 3 and the how-to [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+
+**Whether provider settlements count toward the quota isn't confirmed.** SAFE's guide says personal FX through a <Term k="支付机构" />'s FX business doesn't count toward the annual quota ([Guide, Article 137](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). But 贝宝支付's fee page says the conversion between foreign currency and RMB in cross-border collection is done by PayPal's service partner outside China, and it doesn't say which kind of business that is. So whether 贝宝支付's RMB settlements count toward the USD 50,000, PayPal's pages don't say. Ask PayPal China or your bank before you rely on it. Payoneer's and WorldFirst's pages don't say whether their RMB withdrawals count either, so ask them and your bank too, ideally in writing.
+
+<Callout type="no">
+Don't split amounts to "stay under the quota," for example by breaking one payment into several settlements or asking a friend to settle part of it. Article 7 of the Measures on Individual FX forbids splitting or similar ways of getting around the quota ([Measures](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)), and anyone who uses someone else's quota goes straight onto the watch list ([Guide, Article 62](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). The same goes for the purpose of a transfer. State it truthfully. SAFE requires individual current-account FX to have a real, lawful transaction behind it (Guide, Article 54), and Article 7 of the Measures forbids using false commercial documents or records to get around authenticity checks.
+</Callout>
+
+[Beginner lesson 2](/en/start/2-quota/) explains the quota in more depth.
+
+## Which one to pick
+
+We won't pick the "best deal" for you, because it depends on your situation. Think about a few things. Where is your money? USD in Wise can only take route two. How much do you move at once? A fixed fee per withdrawal, like PayPal's wire, takes a bigger share of a small amount, while a percentage fee takes more as the amount grows, and step 5 writes both out as formulas. Are your records good enough? Route one needs the provider to accept your transaction records, and above the quota, route two needs the bank to accept your documents.
+
+You now know how the money gets home. Next, write each leg's fees as a formula and see exactly where a payment gets trimmed before it reaches you.
+
+## Stuck?
+
+<Q q="My PayPal wire withdrawal came back.">
+<p>The help page says that if the bank can't process it because the details are incomplete or wrong, the money returns to PayPal within 7 to 14 working days and a return fee may apply. As of 2026-11-19, the merchant fee page lists USD 15 for a failed wire withdrawal. Before you try again, check that the account name, account number and bank details are all correctly entered in English or pinyin, and ask your bank whether it has any requirements for this kind of transfer.</p>
+</Q>
+<Q q="PayPal says my account is limited and I can't withdraw.">
+<p>That's an <Term k="账户限制" />. See the how-to <a href="/en/howto/paypal-limited/">When PayPal limits or freezes your account</a>.</p>
+</Q>
+<Q q="The bank says I need documents before it will settle.">
+<p>The bank can decide which documents to check based on your situation (Guide, Article 68). Bring the contracts, invoices and payment records from step 3, ask what else it needs, and see <a href="/en/howto/over-quota/">Settling more than USD 50,000 in a year</a>.</p>
+</Q>
+<Q q="Can I just move the money in Wise to Alipay?">
+<p>Wise's help pages say personal senders in China can't send to Alipay, and China isn't on the sender lists for WeChat or UnionPay. We haven't confirmed how the app behaves for an account registered with a mainland address, so leave this route out of your plans and send USD by Swift to your own bank account.</p>
+</Q>
+
+<Checkpoint id="s4" items={["I've picked a route: the provider settles RMB, or I wire USD home and settle it", "I know the USD 50,000 at the bank is a facilitation quota, and above it I can settle with documents", "I'll ask the provider and my bank whether provider settlements count toward the quota"]} />

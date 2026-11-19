@@ -1,5 +1,91 @@
 ---
 layout: ../../layouts/Guide.astro
 step: 1
+need: 第 0 步写下的两件事：你收的是什么钱，付钱的人能怎么付
+tldr: 收款账户让付钱的人来定。买家用 PayPal 付，开贝宝支付的个人卖家账户；在电商平台上卖东西，用平台支持的 Payoneer 或万里汇；客户银行转账，用 Wise 或 Payoneer 的收款账户。香港 PayPal、美区 PayPal 和 Stripe，住在中国大陆的人开不了。
+description: 按付款方式选收款账户：贝宝支付个人卖家账户、Payoneer 个人账户、万里汇个人电商账号、Wise 个人账户各自收什么钱、住在中国大陆的人能不能开、钱怎么回国；一张对照表，列出每一家官方页面还没写明的事；哪些账户住在大陆开不了。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」和「硬规矩」，资料和出处在 docs/sources/README.md。 */}
+import Callout from "../../components/Callout.astro";
+import Checkpoint from "../../components/Checkpoint.astro";
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+
+假设这个月你有两位客户。一位是美国的小工作室，习惯用 PayPal 付钱，发来的消息里就一句“send me your PayPal”；另一位是德国的公司，财务说他们只做银行转账，要你给一组账户信息。你翻了一晚上教程，越看越乱，每一篇都在推荐自己用的那一家。
+
+<mark><strong>收款账户不用你从一堆名字里硬挑，让付钱的人来定：他用什么方式付，你就开一个能接住这种付款的账户。</strong></mark>
+
+<Term k="收款账户" />就是海外的钱先落脚的地方，开在你自己名下。这一步按[第 0 步](/guide/0-map/)写下的付款方式，一种一种对上去。下面的每一条都出自各家的官方页面，每一家都还有一些官方没有写明的事，表格最后一栏列着，办之前先问清楚。
+
+## 买家用 PayPal 付：开贝宝支付的个人卖家账户
+
+现在中国大陆有两套 PayPal 账户，先分清楚。新的一套开在贝宝支付（北京）有限公司，它是持有中国人民银行《支付业务许可证》的非银行<Term k="支付机构" />（[PayPal 费用中心页脚](https://www.paypal.cn/portal/fees?locale.x=zh)）。老的一套开在新加坡的 PayPal Pte. Ltd.，网址是 `paypal.com/c2`。
+
+老账户正在收窄。PayPal 用户协议的「中国大陆」一节写着，2026 年 6 月 30 日以后注册的个人账户，除了收家人和朋友的付款，收商品和服务付款的功能会受到限制，而且不能再改成企业账户；已经持有企业账户的，也要同时在贝宝支付开户（[PayPal 用户协议，最后更新 2026-06-30](https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2)）。所以要用 PayPal 收海外买家的钱，现在该开的是贝宝支付的账户。
+
+贝宝支付目前只提供企业账户这一种类型，个人卖家注册的是“个人类别的企业用户”，名字里有“企业”，开的人却可以是个人。协议的条件是你必须是中国居民、年满 18 周岁，而且账户所有人只能是中国税收居民，不能是美国税收居民（[PayPal 中国跨境支付服务用户协议，最后更新 2026-05-28](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。收到的钱可以用 PayPal跨境收款 结算成人民币，打到你绑定的国内银行卡上，[第 4 步](/guide/4-bring-home/)细讲。
+
+同一份协议里还有一条和收钱的方式有关：卖家不得要求买家用个人交易的方式付款，也就是 PayPal 里“向朋友或家人发送付款”那个功能，这样做的话 PayPal 可能会拿掉你接受这类付款的功能。所以客户问“我用 friends and family 付你行不行”，答案是不行，请他照正常的商品或服务付款来付。
+
+有一件事要先问清楚。协议讲的是收“商品或服务的销售付款”，跨境收款的常见问题也接受社交媒体主页、视频频道和 App 的链接当作店铺链接（[跨境收款常见问题](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)），可是个人卖家账户能不能收自由职业、软件订阅、创作者分成这类服务收入，并结算成人民币，官方页面没有写明，办之前先问 PayPal 中国或你的开户银行。
+
+## 在电商平台上卖东西：用平台支持的 Payoneer 或万里汇
+
+平台的钱打到哪里，平台说了算。Payoneer 在中国内地个人账户的注册指引里整理了一张表：亚马逊、eBay、TikTok Shop、Shopee 等平台个人账户和公司账户都收，Walmart、Lazada 和 SHEIN 只收公司账户；它也提醒，平台对收款账户类型的要求会变，一切以平台为准（[Payoneer 个人账户注册指引，最后修改 2025-04-01](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)）。
+
+Payoneer 自己的建议是，只有个人银行账户、又不是哪家企业所有人的，开个人账户；有对公账户或公司法人账户的，开企业账户。同一份指引说，在电商平台收款时，个人账户和公司账户一般在功能和费用上没有区别。钱可以提到你名下的中国内地银行账户，到账是人民币（[Payoneer 派安盈：提现人民币](https://www.payoneer.com/zh-hans/marketplace/fx-foreign-exchange/)）。
+
+万里汇（WorldFirst）在中国由蚂蚁国际商业（上海）有限公司运营（[万里汇费率页页脚](https://www.worldfirst.com.cn/cn/pricing/)）。它的跨境电商账户分“个人电商账号”和“公司电商账号”两种，个人可以开前一种（[万里汇注册与认证，2026-10-29](https://www.worldfirst.com.cn/content/articles/b2c_portal/vyrbjs5f)）；做外贸的 B2B 账号只给企业开，个体工商户也算在企业里（[万里汇外贸 B2B 企业认证材料](https://www.worldfirst.com.cn/content/articles/b2b_gbl_portal/3konnrxk)）。提款可以提人民币到你自己的银行卡或支付宝（[万里汇添加提款收款人，2026-04-10](https://www.worldfirst.com.cn/content/articles/b2c_portal/ug_es5jx)）。
+
+## 客户银行转账：用 Wise 或 Payoneer 的收款账户
+
+客户只做银行转账，你就需要一组外币的账户信息给他。Wise 的个人账户是一种选择。Wise 把中国列在可以在账户里持有资金的地区里（[Wise：住在哪里可以持有资金](https://wise.com/help/articles/2813542/where-do-i-need-to-live-to-hold-money-with-wise)），个人账户用中国的地址也能拿到美元账户信息；Wise Business 的企业账户就不行，地址在中国的拿不到美元账户信息（[Wise：能不能拿到美元账户信息](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)）。有了美元账户信息，美国境内的客户用 ACH 或境内电汇付你，美国以外的客户用 Swift 付你。
+
+可钱进了 Wise，别指望它直接换成人民币打到你的支付宝或微信。Wise 的帮助页写明，个人发款人除了在中国的，都能往支付宝汇款；微信和银联的发款国家名单里也没有中国（[支付宝](https://wise.com/help/articles/2kTApouGnjRj6JM1yduMIL/sending-cny-via-alipay)、[微信](https://wise.com/help/articles/1bd1dHKW4uB8p0lnFbzgoZ/how-to-send-and-receive-cny-via-wechat)、[银联](https://wise.com/help/articles/5rpQjZ2pueSOeIh5s2mh7w/how-to-send-and-receive-cny-via-unionpay)）。用中国大陆地址注册的账户在 App 里实际是不是这样，本站没有核实过，所以别把这几条路算进计划里。钱回国走的是 <Term k="Swift 电汇" />，把美元汇到你自己在国内的银行账户，再到银行结汇，见 How-to 的[Wise 里的美元怎么回到国内银行卡](/howto/wise-to-bank/)。
+
+Payoneer 也提供多个币种的收款账户，客户把钱转进来以后，你再提人民币到国内的卡（[Payoneer 费用页](https://www.payoneer.com/pricing/)）。它的注册指引是写给网店卖家的，要填店铺链接；没有店铺的，指引说可以注册以后联系客服再补。
+
+## 一张对照表
+
+下面这张表按付钱的人排。“能不能开”指的是真正住在中国大陆、用自己的身份证和真实地址开户的人。
+
+| 付钱的人 | 收款账户 | 住在中国大陆能不能开 | 钱怎么回国 | 官方还没写明的事 |
+| --- | --- | --- | --- | --- |
+| 用 PayPal 付的买家 | 贝宝支付的个人卖家账户（个人类别的企业用户） | 能。中国居民、年满 18 周岁，只是中国税收居民（[协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)） | 跨境收款结算成人民币到你的卡；也可以电汇美元回国 | 能不能收服务收入并结算成人民币；结算算不算进 5 万美元额度 |
+| 电商平台 | Payoneer 个人账户 | 能。只有个人银行账户、不是企业所有人（[指引](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)） | 提人民币到你名下的国内银行账户 | 没有店铺的自由职业者能不能开；人民币提现现在收多少；算不算进额度 |
+| 电商平台 | 万里汇个人电商账号 | 能（[注册与认证](https://www.worldfirst.com.cn/content/articles/b2c_portal/vyrbjs5f)） | 提人民币到你自己的银行卡或支付宝，先要有人民币结汇额度 | 能不能收服务收入；完整的费率表 |
+| 银行转账的客户 | Wise 个人账户的美元账户信息 | 能。个人账户用中国地址可以拿到美元账户信息（[Wise](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)） | Swift 汇美元到你在国内的银行账户，再到银行结汇 | 个人账户能不能收经营性的收入 |
+| 银行转账的客户 | Payoneer 收款账户 | 能，条件同上面的 Payoneer 个人账户 | 提人民币到你名下的国内银行账户 | 同上面的 Payoneer 个人账户 |
+
+最后一栏这几件事，本站查过的官方页面都没有写明。没写明不等于不行，只是还没有人替你确认，所以别听别人一句“可以的”就开始收钱。开户之前写信问这家服务商，或者问你的开户银行，把回复留下来。表里说到的 5 万美元，是每人每年结汇的便利化额度，不是上限，真实的收入超过了，带上材料照样能办（[外汇局厦门市分局的提示](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)），[第 4 步](/guide/4-bring-home/)细讲。
+
+## 住在大陆开不了的几种
+
+网上教程常提的几种账户，住在中国大陆的人用自己的真实信息是开不了的，不是哪里没找对：
+
+- **香港 PayPal。** 协议要求个人必须是年满 18 岁的香港特别行政区居民，公司的所在地和经营地必须在香港（[PayPal 香港用户协议](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=zh_HK)）。
+- **美区 PayPal。** 个人必须是美国或其属地的居民、年满 18 岁（[PayPal 美国用户协议](https://www.paypal.com/us/legalhub/paypal/useragreement-full)）。为什么别用一个不住的美国地址去开，见[想开美区 PayPal？先看这一页](/howto/us-paypal/)。
+- **Stripe。** 中国大陆不在 Stripe 支持开户的国家和地区名单上，香港在（[Stripe 全球](https://stripe.com/global)）。
+- **PingPong。** 它的服务条款写明只给商业和业务活动用，不许为个人或家庭目的、以消费者身份使用（[PingPong 服务条款](https://www.pingpongx.com/zh/termsandConditions?cb=true)），公开页面上也找不到费率表，所以本站不把它当作个人的选项来讲。
+
+<Callout type="no">
+用别人的名字、地址或账户开这些账户，是协议里明令禁止的。贝宝支付的协议把“使用非本人的信息（例如姓名、地址、邮箱地址等）”开户和使用别人的 PayPal 账户都列为受限制的行为（<a href="https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh">PayPal 中国跨境支付服务用户协议</a>）。
+</Callout>
+
+两种客户都有，就照各自的付款方式各开一个。每一个都开在你自己名下，下一步讲开户的时候要准备什么。
+
+## 卡住了？
+
+<Q q="客户问能不能用 PayPal 的“朋友和家人”付我。">
+<p>别这样收。贝宝支付的协议写明，卖家不得要求买家用个人交易的方式（通常就是“向朋友或家人发送付款”）付款，否则 PayPal 可能移除你接受这类付款的功能（<a href="https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh">协议</a>）。请客户照商品或服务的付款来付。</p>
+</Q>
+<Q q="我只接活，没有网店，Payoneer 要填店铺链接。">
+<p>Payoneer 的指引说，还没在电商平台开店的，可以注册以后联系客服补充店铺链接。没有店铺的自由职业者能不能开个人账户，官方页面没有写明，注册前先问 Payoneer 客服（指引里的热线是 400-841-6666）。</p>
+</Q>
+<Q q="我卖货的平台只收公司账户。">
+<p>Payoneer 的表里，Walmart、Lazada 和 SHEIN 要的是公司账户。注册公司或个体工商户不在本站讲的范围，先看平台自己的入驻要求。</p>
+</Q>
+<Q q="我已经有一个老的 PayPal 个人账户，还能用吗？">
+<p>看你是哪天注册的。PayPal 用户协议的「中国大陆」一节只限制 2026 年 6 月 30 日以后注册的个人账户收商品和服务的付款；企业账户的持有人要同时在贝宝支付开户（<a href="https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2">PayPal 用户协议</a>）。拿不准就登录账户看通知，或者问 PayPal 中国。</p>
+</Q>
+
+<Checkpoint id="s1" items={["我按付钱的人能用的方式，选好了要开的账户", "我知道住在中国大陆开不了香港 PayPal、美区 PayPal 和 Stripe", "表里最后一栏和我有关的事，我准备在开户前问清楚"]} />

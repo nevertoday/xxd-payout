@@ -1,5 +1,80 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 0
+need: "Nothing yet, just read"
+tldr: "Two things decide every step after this one: what kind of money you're paid, and how the person paying you can pay. Write both down before you open any account. Which category your income falls into is, in the end, your bank's call."
+description: "Before you take money from abroad, settle two things: whether you're paid service fees, royalties, wages or online-store sales, how China's FX rules group these, and why the bank, not you, decides the category; and whether your payer can pay by PayPal, a marketplace payout, a bank transfer or a platform wire. What the next five steps cover."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Copy from "../../../components/Copy.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+A client in the US looks at your design drafts and writes back, "Great, how should I pay you?" And you freeze. PayPal? A bank transfer? Should they order through some platform? Search online and one person tells you to open Wise, another says PayPal, and someone else shows you how to fill in a US address. Don't open anything yet. Half the answer is in your hands and half is in your client's.
+
+<mark><strong>Two things decide every step after this one: what kind of money you're paid, and how the person paying you can pay.</strong></mark>
+
+You don't sign up for anything in this step. You just think these two things through and write them down. If this is your first time taking money from abroad and you haven't opened any account yet, read [the three beginner lessons](/en/start/1-three-legs/) first. They walk more slowly through the three legs a payment takes to get home.
+
+This is an unofficial learning site. It has nothing to do with PayPal, Wise, Payoneer, WorldFirst or any bank, and it isn't legal or tax advice. The rules below come from China's State Administration of Foreign Exchange (SAFE) and each provider's own pages, linked after each sentence. Where we differ from them, they're right.
+
+## First: what kind of money are you paid?
+
+Service fees, royalties and wages from abroad all fall under what FX rules call the <Term k="经常项目" />, the category for real transactions. SAFE's guide is clear that an individual's current-account FX business must have a real, lawful transaction behind it ([Current Account FX Business Guide (2020), Article 54](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). That's why the first thing a bank or a provider asks isn't "how much?" but "what is this money for?"
+
+The rules already sort income into types. Article 10 of the Implementing Rules for the Measures on Individual FX lists what a mainland resident brings when their income goes over the annual quota, type by type. These are the lines that matter most if you freelance or make content ([Implementing Rules](http://m.safe.gov.cn/safe/2007/0105/5320.html)):
+
+- Income from the use of proprietary rights and licensing: proof of payment, an agreement or a contract.
+- Income from legal, accounting, consulting and public relations services: proof of payment, an agreement or a contract.
+- Employee pay, meaning wages from an employer: an employment contract and proof of income.
+- Other: relevant proof and payment records.
+
+If you sell online, a different rule applies. Article 66 of the guide says a mainland resident doing cross-border e-commerce can settle through their own FX account, and when they provide documents showing the transaction amounts or the transaction data electronically, the settlement doesn't use their annual quota ([Guide, Article 66](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Bank of China's personal settlement page also lists the kinds of funds it handles, including trade in goods, consulting services, other services, royalties and licence fees, and employee pay ([Bank of China: personal settlement](https://www.boc.cn/pbservice/pb4/200806/t20080626_758.html)).
+
+So you might be wondering whether your design work counts as consulting or as other services. We won't answer that for you, because it isn't ours to decide, and it isn't yours either. Article 68 of the guide says the bank decides, based on your risk profile, which documents it checks, in what form, and what it looks at ([Guide, Article 68](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). In other words, the bank that handles your settlement decides which category your money is in. What you can do is explain truthfully where the money came from and keep the things that prove it. [Step 3](/en/guide/3-paper-trail/) is all about what to keep. As for whether you owe tax on it and how, that's a tax question. This site doesn't cover tax, so ask your local tax authority or a professional.
+
+Writing this down matters because three later things follow from it: which account can take this kind of money, which records you keep, and whether bringing it home as <Term k="结汇" /> uses your USD 50,000 <Term k="年度便利化额度" /> or, above it, which documents you bring. And remember this one now. The USD 50,000 is a facilitation quota, not a ceiling. SAFE's Xiamen branch puts it plainly. The quota "is not a limit on how much an individual can settle or buy each year," real current-account settlements have no amount limit, and above the quota you settle with documents ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). [Beginner lesson 2](/en/start/2-quota/) goes into it.
+
+## Second: how can your payer pay?
+
+The same dollars can arrive in different ways, and each way needs a different account. These four are the common ones:
+
+- **Buyers pay with PayPal.** The 贝宝支付 (PayPal China) home page lists ways to collect, such as sending buyers an invoice (PayPal全球账单, global invoicing) or taking payment at your site's checkout (PayPal全球收单, global checkout), and then PayPal跨境收款 (cross-border collection) turns the balance into RMB ([PayPal China home](https://www.paypal.cn/)).
+- **A marketplace pays you out.** When you sell on Amazon, eBay, TikTok Shop and the like, the platform pays you, and which accounts it can pay into is up to the platform. Payoneer keeps a table for mainland sellers showing whether each platform needs an individual or a company account ([Payoneer individual account guide](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)), and WorldFirst says it connects directly to more than 130 marketplaces ([WorldFirst home](https://www.worldfirst.com.cn/)).
+- **A client pays by bank transfer.** Finance teams often only do bank transfers, so you need a set of account details that can receive foreign currency. With USD account details on a Wise personal account, for example, clients in the US can pay by ACH or domestic wire, and clients outside the US can pay by Swift ([Wise Help Centre](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)).
+- **A platform wires USD straight to your Chinese bank.** Some platforms pay people through Stripe Global Payouts. Stripe's docs say platforms in the US and UK can pay individuals in China in USD by wire, still in private preview, and the recipient provides an email, name, address, date of birth and phone number ([Stripe docs](https://docs.stripe.com/global-payouts/recipient-requirements.md)). That money lands in your bank account as USD, and you settle it at the bank.
+
+If you don't know how your client can pay, the easiest thing is to ask. You can send them this as it is:
+
+<Copy id="ask-payer" title="A note to your client" code="Hi! Before I send the invoice, could you tell me how you'd like to pay? For example PayPal, a bank transfer in USD, or a platform you already use for paying freelancers. I'll set things up on my side to match. Thanks!" />
+
+## Put the two together and you have a map
+
+Write the two answers side by side, like "design fees, client pays by PayPal", "store sales, the marketplace pays into Payoneer" or "wages from a company abroad, by bank wire", and the next five steps point the way:
+
+1. [Step 1](/en/guide/1-choose/) picks a receiving account that matches how your payer can pay.
+2. [Step 2](/en/guide/2-open/) opens it with your own ID, your real address and a bank card in your name.
+3. [Step 3](/en/guide/3-paper-trail/) keeps contracts, invoices, delivery records and platform statements from the first payment on.
+4. [Step 4](/en/guide/4-bring-home/) picks a way to turn the money into RMB on your card.
+5. [Step 5](/en/guide/5-fees/) writes each leg's fees as a formula, with the date you checked each fee page.
+
+This guide only covers receiving money in your own name, with your real address, into accounts you own. Some tutorials online teach you to use an address abroad you don't live at, borrow someone else's quota, or split one payment into several. We don't teach any of that. For why not, see the how-to [Tutorials you shouldn't follow](/en/howto/bad-tutorials/). If you're thinking of a US PayPal account, read [this page](/en/howto/us-paypal/) first.
+
+This page comes down to one thing. Get clear on where your money comes from and how it gets to you, then open an account. Next, pick a receiving account that fits the way your payer can pay.
+
+## Stuck?
+
+<Q q="I do design work and also sell templates online. Which category is that?">
+<p>Tell the provider and your bank about both, truthfully. Which payment falls in which category, and which documents it needs, is for the bank handling it to decide (<a href="http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf">Guide, Article 68</a>). We don't pick a category for you. What you can do is keep separate records for the two kinds of income. <a href="/en/guide/3-paper-trail/">Step 3</a> shows how.</p>
+</Q>
+<Q q="My client can only pay by PayPal, but I heard PayPal in China can't receive money any more.">
+<p>Mainland China now has two PayPal account systems. The new one is run by 贝宝支付（北京）有限公司, and individual sellers can sign up for it. The old one is with PayPal Pte. Ltd., and under its user agreement, personal accounts registered after 30 June 2026 are limited to friends-and-family payments and can't take payments for goods and services (<a href="https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2">PayPal user agreement, 中国大陆 section</a>). <a href="/en/guide/1-choose/">Step 1</a> explains.</p>
+</Q>
+<Q q="Do I have to pay tax on this?">
+<p>That's a tax question. This site doesn't cover tax, so ask your local tax authority or a professional.</p>
+</Q>
+<Q q="Is this site run by PayPal or by SAFE?">
+<p>No. It's an independent, unofficial learning site with no connection to PayPal, Wise, Payoneer, WorldFirst, any bank or the State Administration of Foreign Exchange, and it isn't legal or tax advice. The rules are whatever each provider's own pages, your bank and <a href="https://www.safe.gov.cn/">SAFE</a> say.</p>
+</Q>
+
+<Checkpoint id="s0" items={["I've written down what kind of money I'm paid, and I know the bank decides the category in the end", "I've asked how the person paying me can pay", "I know the USD 50,000 is a facilitation quota, not a ceiling"]} />

@@ -1,5 +1,120 @@
 ---
 layout: ../../../layouts/Guide.astro
 step: 2
+need: "Your own ID card, a phone number and email of your own that can receive codes, a bank card in your name, and your real address"
+tldr: "Everything you fill in has to be yours: ID, phone, email, address, bank card. 贝宝支付 wants both sides of your ID and face verification; Payoneer wants your name and address in pinyin, bank details that match your ID, and photos of the original ID card; WorldFirst wants your ID plus face or Alipay verification; Wise wants a photo of your ID and a selfie."
+description: "Opening accounts in your own name: why a borrowed ID, address or account causes trouble (the providers' agreements and SAFE's rules); what to prepare for a 贝宝支付 personal seller account, a Payoneer individual account, a WorldFirst individual e-commerce account and a Wise personal account, which buttons to press, and how long review takes."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Checkpoint from "../../../components/Checkpoint.astro";
+import Tabs from "../../../components/Tabs.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Before you open an account, someone will usually offer to help. A friend says, "Use my ID, I never use my quota anyway." A tutorial says, "Put this US forwarding warehouse as your address, it gets approved faster." Both sound like shortcuts. But each borrowed thing comes back to find you, one by one, when you try to receive money and turn it into RMB.
+
+<mark><strong>Everything you fill in when you open an account has to be your own: ID, phone number, email, address, bank card. When they all match each other, the account holds up.</strong></mark>
+
+This step starts with why, then goes provider by provider through what to prepare for the account you picked in [step 1](/en/guide/1-choose/). Button names are as each provider's official guide writes them. Pages get redesigned, so if yours looks a little different, go by what you see.
+
+## Why it has to be yours
+
+Start with the providers. 贝宝支付's agreement lists these as restricted activities: falsely claiming to be a Chinese resident aged 18 or over, opening an account using a name, address, email or other details that aren't your own, and using someone else's PayPal account ([PayPal China cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). Wise says the currencies you can get account details for depend on the country of the address you registered, and if you move somewhere they aren't supported, your account details are switched off automatically ([Wise: how do I open account details?](https://wise.com/help/articles/2978028/how-do-i-open-account-details-to-receive-money)).
+
+Then the FX rules. When the money comes home and you settle it, it's your own USD 50,000 annual facilitation quota that's used. It isn't a ceiling, and real income above it can still be settled with documents ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). Within the quota, only close relatives (spouse, parents, children, siblings, grandparents and grandchildren) may handle it for you within the quota, bringing both IDs, a written authorisation and proof of the relationship ([Current Account FX Business Guide, Article 61](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Using someone else's quota puts you straight onto SAFE's <Term k="关注名单" />, and for that year and the next two, every settlement or purchase needs transaction documents ([Guide, Article 62](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). When a bank opens an FX account for an individual, it also has to make sure the person matches the ID ([Guide, Article 69](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+So the account in your name, the money paid to a card in your name, and settlement on your own ID make one unbroken line, and every later step goes smoothly. [Beginner lesson 3](/en/start/3-own-name/) goes into this in more detail. For why tutorials that lend you an address or identity can't be followed, see [Tutorials you shouldn't follow](/en/howto/bad-tutorials/).
+
+## Provider by provider
+
+The guides for 贝宝支付, Payoneer's mainland account and WorldFirst are in Chinese, so the button names below are the Chinese labels you'll see on screen, with the English meaning in brackets.
+
+<Tabs id="open" items={[["paypal", "贝宝支付"], ["payoneer", "Payoneer"], ["worldfirst", "WorldFirst"], ["wise", "Wise"]]}>
+<div slot="paypal">
+
+**Have three things ready.** An email address that can receive codes, a mainland 11-digit mobile number that can receive codes, and a valid mainland ID card, both the photo side and the national-emblem side. Uploaded images can be jpg, jpeg or png, under 5 MB, clear and unobstructed. Face verification has to be done by you, scanning the code yourself ([PayPal China personal seller sign-up guide](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)).
+
+**Create the account.** Go to PayPal China (`www.paypal.cn`), click **立即注册** (Sign up) at the top right, choose **个人卖家账户** (personal seller account), fill in your login details and password, tick the agreements and click **创建PayPal账户** (Create PayPal account). Then click **获取验证码** (Get code) and enter the code sent to your email. Once the account exists, click **开始个人账户入驻流程** (Start personal account onboarding).
+
+**Onboarding.** Upload photos of both sides of your own ID card, check them and click **确认身份信息** (Confirm identity details). Then choose face verification or a manual photo upload. For face verification, the guide suggests scanning the QR code with WeChat on your phone. The code is valid for 3 minutes, and after that you click **刷新二维码** (Refresh QR code). It opens the "eID 数字身份" mini-program, where you blink and hold still as prompted.
+
+<Callout type="ok">
+Back on the application page, you see "人脸认证成功" (face verification succeeded), and you carry on filling in the form. If it fails, follow the prompts to try again. After 3 failures in total, go back to the application page and scan a new code.
+</Callout>
+
+**The last details.** Fill in your occupation, personal mobile number, business name and customer-service phone number, then pick a merchant category code (MCC) and your monthly sales from the drop-down lists. If you do several kinds of work, pick the main one. Check everything and click **确定** (Confirm) to submit. Your application goes into review, and you can click **访问您的PayPal账户** (Go to your PayPal account) to link a bank card. Individuals link a personal bank card ([cross-border collection FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)).
+
+**How long review takes.** The FAQ says that if your documents fully meet the requirements, review is usually done within 2 working days of receiving them. One user on X reports that the wording he saw was within 7 working days, and that many people found it quick ([@kevinma_dev_zh](https://x.com/kevinma_dev_zh/status/2012323595385807002)). Go by the official FAQ and the notices in your account.
+
+When you later apply for cross-border collection, you'll also give a store link. The FAQ accepts your own website, a company site, a marketplace store, a social-media page, a video channel (such as YouTube or TikTok) or an app link, and filling it in accurately speeds up review.
+
+</div>
+<div slot="payoneer">
+
+Payoneer's guide for mainland individual accounts is detailed, so this follows its order ([Payoneer individual account guide, last modified 2025-04-01](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)).
+
+**Start page.** Set the page to Simplified Chinese and choose **否，我的公司未注册** (No, my company isn't registered). Enter your name, email and date of birth. Write your given name and family name in pinyin, on separate lines. The email becomes your username, and an email already registered with Payoneer can't be used again. The date of birth must match your ID.
+
+**Contact details.** Choose **China-中国** as your country and write your address in pinyin, including unit and building number, street, and province, city and district. Enter the mobile number you normally use and click **发送代码** (Send code) for a verification code.
+
+**Security details.** Your password needs at least 7 characters, with at least one letter and one digit. Answer the security questions in English or digits, and remember them, because you'll need them to recover your password or verify your account later.
+
+**Bank details.** This card is where your withdrawals go. Choose **法人个人银行账户** (personal bank account), **China-中国** as the bank's country and **CNY** as the currency. Your ID number, the account name in Chinese characters and the account name in pinyin must all match what you entered earlier, and the branch name goes in Chinese. Last comes the store link. If you haven't opened a store on a marketplace yet, the guide says you can contact support after registering to add it.
+
+**More documents.** During review, Payoneer emails you to ask for photos of your ID card. Photograph the original card, since scans and photocopies won't pass. The ID must be valid, the light good, all four corners in the frame, and the image uploaded as the original file without compression, ideally over 1 MB. If your address was vague, it will ask you to update it and send proof of address: a water, electricity, internet or gas bill from the last 3 months, or a bank document with the bank's letterhead, date and stamp, showing your full address and your name.
+
+**How long review takes.** The guide doesn't give a number of days. If you hear nothing for a long time, call the hotline it lists, 400-841-6666. Once approved, it suggests turning on two-step verification.
+
+</div>
+<div slot="worldfirst">
+
+You can sign up for a WorldFirst cross-border e-commerce account in its app ([WorldFirst registration and verification, 2026-10-29](https://www.worldfirst.com.cn/content/articles/b2c_portal/vyrbjs5f)).
+
+**Sign up.** On the app's home screen, tap **注册** (Register), choose **商业账户** (business account), pick your place of registration and tap **继续** (Continue), enter and verify your phone number or email, set a password and tap **创建账户** (Create account). Then tap **开通服务** (Activate services) on the home screen, choose **跨境电商** (cross-border e-commerce) and tick the agreements. If you signed up with an email, link a phone number before verification, because all later codes go to that number.
+
+**Verify.** Tap **去认证** (Verify) on the home screen, choose **个人电商账号** (individual e-commerce account) as the account type, and fill in basics such as your main business and the countries you sell to. Then upload the account holder's ID card, check the details it reads off, and choose how to verify your identity: Alipay, a face scan, or a photo of you holding your ID. After you submit, the home screen shows "审核中" (under review), or "待修改" (needs changes) if something has to be fixed.
+
+**Two things to know.** One phone number and one email can each register only one WorldFirst account ([WorldFirst pricing page FAQ](https://www.worldfirst.com.cn/cn/pricing/)). The e-commerce guide doesn't say how long review takes. A separate WorldFirst personal verification guide, written for its app-developer accounts, says 1 to 2 working days ([WorldFirst personal verification](https://www.worldfirst.com.cn/content/articles/app-developer-user-guides/personal-authentication)), which you can take as a rough guide.
+
+</div>
+<div slot="wise">
+
+The Wise help pages quoted here are in English, and so are the button names.
+
+**Register with your real address.** The currencies you can get account details for depend on the address you registered, and a personal account with a China address can get USD account details ([Wise: can I get USD account details?](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)).
+
+**Open USD account details.** From Home, select the plus icon to add a currency that has account details, such as USD, then select **Get account details**. The first time, you'll need to meet some requirements, and for a personal account that means a photo of your ID and a separate selfie ([Wise: how do I open account details?](https://wise.com/help/articles/2978028/how-do-i-open-account-details-to-receive-money)).
+
+**It may ask again later.** Wise says that to meet its regulatory requirements it sometimes asks for up-to-date identity information, and if you get an email about it, follow the instructions to keep using your account ([Wise Help Centre](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)).
+
+Once that's done, go to USD and select the account details button to see and copy the details you give your client.
+
+</div>
+</Tabs>
+
+## Check everything once you're done
+
+When your accounts are open, take two minutes to check. Is the name on each account the name on your ID (pinyin counts)? Is the linked bank card yours? Are the phone number and email ones you've always used yourself? When these line up, there's one less hurdle when you withdraw in step 4.
+
+<Callout type="warn">
+Don't let someone else register with your phone number or email, and don't open accounts for anyone else in your name. WorldFirst says one phone number and one email can each register only one account, and 贝宝支付's agreement forbids using another person's PayPal account.
+</Callout>
+
+You now have a receiving account in your own name. Next, keep the records from the very first payment.
+
+## Stuck?
+
+<Q q="Face verification keeps failing.">
+<p>贝宝支付's guide suggests scanning with WeChat on your phone, with WeChat newer than 8.0.8 on iOS or 8.0.7 on Android. The QR code lasts 3 minutes, so refresh it when it expires. After 3 failures in total, go back to the application page and scan again. If it still won't work, you can choose a manual photo upload instead (<a href="https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf">sign-up guide</a>).</p>
+</Q>
+<Q q="Can I link a family member's bank card?">
+<p>This site only covers linking a card in your own name. 贝宝支付 individuals link a personal bank card, and Payoneer requires the account name to match the name you registered with. Under SAFE's rules, domestic transfers between personal FX accounts are limited to your own accounts and your close relatives' accounts (<a href="http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf">Guide, Article 67</a>).</p>
+</Q>
+<Q q="I rent, and I can't produce proof of address.">
+<p>Payoneer accepts the original e-invoice for a water, electricity, internet or gas bill from the last 3 months, or a bank document with the bank's letterhead, date and stamp, showing your full address and name. If you have none of these, ask Payoneer support what else it accepts.</p>
+</Q>
+<Q q="Payoneer asks for my store link, but I only freelance.">
+<p>The guide says that if you haven't opened a store, you can contact support after registering to add one. Whether a freelancer with no store can open an individual account, Payoneer's pages don't say, so ask its support before you register.</p>
+</Q>
+
+<Checkpoint id="s2" items={["The name on my account matches my ID, and I gave my real address", "The linked bank card is in my name, and the phone number and email are ones I use myself", "I know roughly how long review takes and who to contact if it doesn't go through"]} />
