@@ -1,5 +1,79 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: paypal-limited
+step: 3
+time: 8-minute read
+for: A payment in your PayPal balance shows as pending, or you've had a notice about a limitation or a reserve
+tldr: A hold ties up one payment, a reserve sets aside part of your balance, and a limitation stops you doing certain things. Read which one the notice describes, then give PayPal what it asks for. Don't open another account to get around it.
+description: "What to do when PayPal holds a payment, sets a reserve or limits your account: what each one is, how long PayPal's agreement says they usually last, where to read the notice, what to send, and which workarounds break the agreement themselves. The 贝宝支付 and older c2 agreements say the same thing on these points."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+
+You wake up to an email from PayPal saying your account has been limited. Or there's no email at all, just a payment in your balance marked pending that you can't withdraw. The first reaction is usually panic, then a search for "PayPal unlock", which turns up a pile of home remedies. When you finish this page, you'll be able to tell whether you're dealing with a hold, a reserve or a limitation, you'll know what PayPal's agreement says about each and how long they usually last, and you'll know what to send next and what not to do.
+
+<mark>A hold ties up one payment, a reserve sets aside part of your balance, and a limitation stops you doing certain things. Work out which one you have, then send what PayPal's notice asks for. That's the most direct way out.</mark>
+
+## Which account this page is about
+
+PayPal runs two account systems in mainland China: the newer accounts at 贝宝支付（北京）有限公司 and the older c2 accounts with PayPal Pte. Ltd. On holds, reserves and limitations, the two agreements say almost the same thing, so those sections hold for both; for anything else, go by your own account's agreement. Newer accounts follow the [cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh) and the [worldwide terms](https://www.paypal.cn/portal/paypal-worldwide-services-terms-and-conditions?locale.x=zh) (both last updated 2026-05-28). Older accounts follow the section on holds, limitations and reserves in the [c2 user agreement](https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2) (last updated 2026-06-30).
+
+## Read the notice first
+
+The agreement says that unless it states otherwise, PayPal will notify you of any of these actions, and that to find out about a limitation or hold you should go to the **调解中心** (the resolution centre) or read the instructions in the email notice ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). It's also clear that PayPal may decide on confidential risk criteria, that laws or government authorities may stop it telling you certain things, and that it has no duty to tell you the details of its risk processes. So don't expect an answer to "why me". What the notice asks you to do is the part you can act on.
+
+## A hold: one payment tied up
+
+A hold applies to a single payment or to the whole account. While it lasts, nobody can use that money, and your balance shows it as unavailable or pending. The agreement lists some common cases: new sellers or sellers with little sales history, payments for high-risk items such as electronics or tickets, and sellers with delivery problems or high rates of unhappy buyers or disputes ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+As for how long, the agreement says a risk-based hold usually lasts up to 30 days from the day the payment reached your account, unless PayPal has reason to keep it. Sometimes PayPal releases it early, for example if you upload tracking information for the shipment, though that's PayPal's call. If the payment is disputed and might be reversed, the hold stays until the dispute is resolved. So if a few payments are held when you're just starting out, the "new seller" case is most likely what's happening, and it doesn't mean you did anything wrong.
+
+## A reserve: part of your balance set aside
+
+A reserve is money PayPal sets aside in your account when it thinks you, your account, your business model or your transactions carry higher risk. The part held shows as pending in your balance and can't be withdrawn ([worldwide terms](https://www.paypal.cn/portal/paypal-worldwide-services-terms-and-conditions?locale.x=zh)). The terms describe two kinds:
+
+- A rolling reserve holds back a percentage of each day's transactions and releases it later. The terms give the example of 10% over a 90-day cycle: what's held on day 1 is released on day 91, and so on. This is the most common kind.
+- A minimum reserve is a set amount you must keep in your balance at all times. It can be paid in up front, or built up from a percentage of your sales until it reaches that amount.
+
+PayPal notifies you when it sets a reserve and tells you its terms, and it notifies you again if a change in its risk assessment changes those terms. The factors it weighs include how long you've been in business, how likely chargebacks are in your industry, your transaction history, your credit history, your delivery times, and whether your returns, chargebacks, claims or disputes are above average.
+
+## A limitation: some actions blocked
+
+An <Term k="账户限制" /> stops you, for now, from paying, receiving or withdrawing. The reasons the agreement lists are: PayPal suspects someone is using your account without your knowledge; someone used a buyer's card or your card without permission; to comply with the law; PayPal has reason to think you've broken the agreement; or your seller performance points to higher risk, such as too many claims and chargebacks, selling new or high-priced products, or a sudden jump in sales ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+The agreement also gives the order for lifting it. You fix the issue in your account first, then ask for the limitation to be lifted. Usually PayPal lifts it once you've given it the information it needs, but there are exceptions: if, after getting your information, PayPal still reasonably thinks the risk remains, it may take further steps. And if a court order or regulatory requirement is behind it, holds and limitations last as long as needed, and a hold may go beyond 180 days.
+
+## What to do next
+
+Bring all that back to your own account and there are only a few things to do, in this order:
+
+1. **Read the notice.** In the **调解中心** or the email, see whether it's a hold, a reserve or a limitation, what PayPal wants from you and by when.
+2. **Send everything it asks for.** The agreement says you agree to respond promptly to PayPal's reasonable requests for financial statements and other documents or information. Orders, contracts, shipping records and messages with buyers that you've kept along the way are what you need now. [Keep the paper trail from day one](/en/guide/3-paper-trail/) covers how. If you sell physical goods, uploading tracking information may get a hold released early.
+3. **Wait for the dispute to end.** If the hold is because of a dispute, PayPal releases it if it decides the payment shouldn't be reversed, or takes the amount from your account if it decides it should.
+4. **Contact PayPal's customer service.** The agreement says that if you have a dispute with PayPal, you contact PayPal first, and you can complain to the customer service that applies to you.
+
+If PayPal ends up closing your account or stops providing its service to you, it will notify you, and you can withdraw the funds in your account that aren't restricted ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+<Callout type="no" title="Don't open another account to get around a limitation">
+The agreement lists all of these as restricted activities: trying to open another PayPal account while yours is limited, suspended or short of funds; opening a new account with information that isn't yours, such as a name, address or email address; and using someone else's PayPal account ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). If you do, PayPal can limit, suspend or close the account and hold the money in it. The original problem is still there, and now you have a second one.
+</Callout>
+
+One more thing, unrelated to risk. The 贝宝支付 agreement says that after 12 months with no transactions, PayPal may suspend or stop its service, and after more than two years without a login, it may close the account (the c2 agreement also has the two-year login rule). If you don't use an account much, log in now and then.
+
+## Stuck?
+
+<Q q="The amount I can settle is 0. Has my account been limited?">
+Not necessarily. 贝宝支付's FAQ says the amount you can settle is estimated from your transaction information, and filling in product names and shipping details makes it recalculate. That's a separate thing from a limitation. See "Stuck?" at the end of [What a USD 100 PayPal payment leaves you with](/en/howto/paypal-100/).
+</Q>
+<Q q="I'd rather just close the account and take my money out.">
+The 贝宝支付 agreement says you can't close your account while it's on hold or limited, or while there are pending transactions or unresolved disputes, and you can't close it to avoid an investigation. Sort out the limitation first.
+</Q>
+<Q q="How long until it's lifted?">
+The agreement doesn't give one timeframe. A risk-based hold usually lasts up to 30 days; a hold because of a dispute lasts until the dispute is resolved; a limitation is usually lifted once you've sent the information; and one based on a court order or regulatory requirement lasts as long as needed.
+</Q>
+<Q q="Someone suggested taking payments through a friend's account for now.">
+Using someone else's PayPal account is a restricted activity in the agreement, and PayPal can limit, suspend or close accounts for it. This site only covers getting paid into accounts in your own name. Don't do it.
+</Q>
+
+You can now tell a hold, a reserve and a limitation apart, and you know the way out is sending what the notice asks for, not opening another account. To run into these less often in the first place, go back to [Keep the paper trail from day one](/en/guide/3-paper-trail/).
