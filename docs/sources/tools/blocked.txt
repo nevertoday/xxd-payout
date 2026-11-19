@@ -1,0 +1,11 @@
+https://www.paypal.com/c2/webapps/mpp/cny-withdrawal-disclaimer | 403 "Please enable JS" (curl and WebFetch) | 2026-11-19
+https://www.paypal.com/c2/webapps/mpp/kyc?locale.x=zh_C2 | 403 "Please enable JS" | 2026-11-19
+https://www.paypal.com/c2/webapps/mpp/country-worldwide?locale.x=zh_C2 | 200 but empty body (JS-rendered) | 2026-11-19
+https://www.paypal.cn/portal/landing/tier-rmb-settlement-fee | redirects to login page | 2026-11-19
+https://www.payoneer.com/fees/ | 301 redirect loop (Cloudflare cookie), WebFetch "too many redirects" | 2026-11-19
+https://helpcenter.pingpongx.com and https://help.pingpongx.com/hc/kb/article/1518545 | 412 | 2026-11-19
+https://www.worldfirst.com.cn/content/helpcenter | JS-rendered, empty | 2026-11-19
+https://www.cmbchina.com/personal/saving/savingInfo?guid=57ff012b-6982-4a63-af27-e980d66d5b68 | 200 but empty body (JS-rendered) | 2026-11-19
+https://support.stripe.com/questions/requirements-to-open-a-stripe-account-in-another-country | curl empty JS shell; WebFetch "unable to verify domain" | 2026-11-19
+https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses | curl empty JS shell; WebFetch extract saved, needs a byte-level check | 2026-11-19
+https://www.paypal.cn/portal/merchant/rmb-transfer (个人账户申请指南 / 企业账户申请指南 material links) | links are added by JS, not in the static HTML or page data | 2026-11-19
