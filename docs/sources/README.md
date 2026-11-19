@@ -94,7 +94,7 @@ The site can state plainly that a mainland resident cannot open one. The agreeme
 ### Stripe and similar
 
 - Mainland China is not a supported Stripe country; Hong Kong is. [stripe.com/global](https://stripe.com/global)
-- For Hong Kong accounts, "we can't accept non-HK ID numbers for merchants signing up as individuals." This is a WebFetch extract; byte copy pending. [Stripe support](https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses)
+- For Hong Kong accounts, "we can’t accept non-HK ID numbers for merchants signing up as individuals." Checked in a browser on 2026-11-19; verbatim copy in `raw/official/stripe/hk-requirements-browser-2026-11-19.md`. [Stripe support](https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses)
 - Stripe Global Payouts lets US and UK platforms pay individuals in China in USD by wire (private preview). [recipient requirements](https://docs.stripe.com/global-payouts/recipient-requirements.md)
 - Stripe Atlas (forming a US company) appears on the same page. [stripe.com/global](https://stripe.com/global). A real US company brings its own legal and tax duties and is out of scope for a beginner site; this pack has no sources on it.
 - Merchant-of-record platforms named in community posts (Paddle, Lemon Squeezy, Creem, Dodo Payments, Polar) were not checked against official pages.
