@@ -1,5 +1,60 @@
 ---
 layout: ../../layouts/HowTo.astro
 slug: us-paypal
+step: 1
+time: 读 6 分钟
+for: 美国的客户让你「发个 PayPal 账号过来」，你在想要不要开一个美区 PayPal
+tldr: 美区 PayPal 只给住在美国的人开，港区 PayPal 只给住在香港的人开。你住在中国大陆，开它们就得在身份或地址上填不真实的信息，这正是 PayPal 协议禁止的。美国客户照样能付进你自己名下的正规账户。
+description: 住在中国大陆，能不能开美区 PayPal：PayPal 美国用户协议要求个人是美国居民、禁止提供不真实的身份信息、可扣住余额最长 180 天；港区 PayPal 和 Stripe 也按你真正住在哪里开户。以及美国客户付钱给你时，你可以用哪几个开在自己名下的账户接住。
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」和「硬规矩」，资料和出处在 docs/sources/README.md。 */}
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+import Callout from "../../components/Callout.astro";
+
+美国的客户谈好了价钱，最后一句是「Just send me your PayPal」。你去网上一搜，好多帖子说开个美区 PayPal 最省事，收美国的钱就跟本地人一样方便。这个念头再自然不过：客户在美国，账户也在美国，中间好像少走了好多路。看完这一页，你会知道为什么美区账户对你不是一个能选的选项、PayPal 自己的协议是怎么写的，也会知道美国客户想付钱给你时，你能用哪几个开在自己名下的账户接住。
+
+<mark>PayPal 按你真正住在哪里给你开账户：美区给住在美国的人，港区给住在香港的人。你住在中国大陆，能开的是贝宝支付的账户，美国的买家照样能付进来。</mark>
+
+## 美区 PayPal：协议写明要住在美国
+
+PayPal 美国的用户协议开头就写了谁能开户：个人必须是美国或美国属地的居民，并且年满 18 岁（或者达到所在州的成年年龄），才能开美国的 PayPal 账户、使用 PayPal 服务；企业必须在美国成立、在美国经营或者是美国的居民（[PayPal 美国用户协议](https://www.paypal.com/us/legalhub/paypal/useragreement-full)，页面写的最近更新日期是 2026-11-04）。
+
+同一份协议在受限活动里列了一条：提供关于你的身份、账户或业务的虚假、不准确或误导性信息。PayPal 可以因此采取的措施里，有一条是扣住你账户里的余额，最长 180 天；有法院命令的，还可以更久。
+
+两条放在一起，答案就很清楚了。你住在中国大陆，按这份协议本来就不符合开户条件；要开，就只能填一个你并不住的地址，或者别的不真实的信息，而这正是协议禁止的事。钱一旦被扣住，客户付的款你可能半年都动不了。
+
+## 港区 PayPal、香港的 Stripe，也是同一个道理
+
+有人会想，那换成香港呢？PayPal 香港的用户协议写的是，个人必须是年满 18 岁的香港特别行政区居民，企业的所在地和经营地必须在香港（[PayPal 香港用户协议](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=zh_HK)，最近更新 2026-05-28）；核实身份时，要在 PayPal App 里拍香港身份证的正反面和一张自拍（[PayPal 香港身份验证](https://www.paypal.com/hk/cshelp/article/how-do-i-confirm-my-identitycip-help606)）。
+
+Stripe 也一样。它的全球服务地区列表里有香港，没有中国大陆（[Stripe 服务地区](https://stripe.com/global)）。Stripe 的帮助页还写着，以个人身份注册香港账户的，不接受非香港的身份证号码（[Stripe 帮助页](https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses)）。这一句本站只有工具抓取的摘录，还没有用浏览器逐字核对原页面，以 Stripe 页面上写的为准。
+
+反过来看，贝宝支付的协议也是这个规矩：个人卖家必须是年满 18 岁的中国居民，并且只能是中国税收居民，不能是美国税收居民；把自己说成中国居民、其实不是，也算受限活动（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。每一家 PayPal 都只给自己那里的居民开户，你该开的，就是你住的地方那一家。
+
+## 美国客户想付钱，你可以这样接
+
+所以真正要回答的问题是：美国的客户怎么付，你用哪一个<Term k="收款账户" />接。这件事[完整教程第 1 步](/guide/1-choose/)细讲，这里先说个大概，原则是让付钱的人来定。
+
+**客户想用 PayPal 付。** 开一个贝宝支付的个人卖家账户（[paypal.cn](https://www.paypal.cn/)）。它能收海外买家用 PayPal 付的钱，比如结账、账单、付款链接，再通过 **PayPal跨境收款** 结算成人民币到你的银行卡。注册要邮箱、中国大陆的 11 位手机号、有效的身份证，还要做人脸识别（[个人卖家注册指南](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)）。一笔钱一路扣多少，看[100 美元的 PayPal 付款，最后到手多少](/howto/paypal-100/)。要留意的是，个人卖家账户能不能收接活、做内容这类服务收入并结算成人民币，官方页面没有写明，办之前先问 PayPal 中国。
+
+**客户想用银行转账付。** Wise 的个人账户用中国地址也能拿到美元收款信息，美国境内的 ACH 转账进来不收费，美国境内电汇 6.11 美元（截至 2026-11-19，[Wise 收款费用](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)）。钱怎么回国，看[Wise 里的美元怎么回到国内银行卡](/howto/wise-to-bank/)。Wise 个人账户能不能收经营性的收入，它的页面没有写明，也要先问 Wise。Payoneer 也有给中国大陆个人开的账户，适合只有个人银行账户、自己不是企业主的人（[Payoneer 个人账户注册指南](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)）。
+
+**客户的平台用 Stripe 发款。** 你自己开不了 Stripe，可美国和英国的平台能通过 Stripe 的 Global Payouts，把美元电汇给在中国的个人，这项服务目前是 private preview（小范围预览）；它要的是你的邮箱、姓名、地址（不能是邮政信箱）、出生日期和电话（[Stripe 收款人要求](https://docs.stripe.com/global-payouts/recipient-requirements.md)）。费用由付款的平台定。
+
+<Callout type="tip">
+跟客户直接说你在中国大陆，然后给他一个他用得上的付款方式：贝宝支付账户发出的 PayPal 账单或付款链接，或者 Wise 的美元收款信息。
+</Callout>
+
+## 卡住了？
+
+<Q q="客户说他只会用 PayPal 付。">
+那正好。贝宝支付的账户收的就是海外买家用 PayPal 付的钱，客户那边照常用他的 PayPal 付，不用管你在哪一区。你这边先确认个人卖家账户能不能收你这类收入。
+</Q>
+<Q q="网上说用中国护照也能注册香港的账户。">
+PayPal 香港要求个人是香港居民；Stripe 的帮助页（本站只有摘录）说以个人身份注册香港账户不接受非香港的身份证号码。护照不会让你变成香港居民，这条路不通。
+</Q>
+<Q q="我已经有一个用美国地址开的 PayPal 账户了。">
+按 PayPal 美国用户协议，提供不真实的身份或账户信息属于受限活动，PayPal 可以扣住余额最长 180 天。本站不教怎么处理这种账户，也不是法律意见；别再往里收新的钱，账户的事直接问 PayPal。往后的收款，换成开在你自己名下、你真正住的地方的账户。
+</Q>
+
+说到底，选收款账户这件事，起点是你真正住在哪里，再看客户怎么付。照这个顺序，接着看[完整教程第 1 步：选一个收款账户](/guide/1-choose/)。

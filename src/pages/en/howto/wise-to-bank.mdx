@@ -1,5 +1,76 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: wise-to-bank
+step: 4
+time: 7-minute read
+for: You live in mainland China, have USD in a Wise personal account, and want it on your own Chinese bank card
+tldr: Send the USD by Swift to a bank account in your own name in China, then settle it to RMB at your bank. Wise's help pages leave China off the personal sender countries for its Alipay, WeChat and UnionPay CNY routes, so don't count on those.
+description: "Getting USD from a Wise personal account to your Chinese bank card when you live in mainland China: a Swift transfer to your own account in China, which Wise page and date each fee comes from, what settling at your bank involves, and why Wise's Alipay, WeChat and UnionPay routes don't apply to a personal account registered with a China address."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+
+A client abroad has paid your design fee into your Wise USD account, and there it sits. Plenty of posts online say "just send it to Alipay", but when you read Wise's own help pages, they don't say that. When you finish this page, you'll know the route that gets this USD to your Chinese bank card, roughly what each leg costs and which page says so, and why the Alipay, WeChat and UnionPay routes aren't ones you can count on.
+
+<mark>If you live in mainland China and registered your Wise personal account with a China address, your USD comes home by Swift: first to a bank account in your own name in China, then settled to RMB at that bank.</mark>
+
+## Alipay, WeChat, UnionPay: Wise's pages leave China out
+
+Let's clear up the easiest wrong turn first. Wise can send CNY from a personal account to individuals in China through UnionPay, Alipay and WeChat ([guide to CNY transfers](https://wise.com/help/articles/2955298/guide-to-cny-transfers)). But each route limits which countries you can send from. The Alipay page says, "Personal senders can send to Alipay from all supported countries except:" and China is the first name on that list ([Alipay](https://wise.com/help/articles/2kTApouGnjRj6JM1yduMIL/sending-cny-via-alipay)). The WeChat and UnionPay pages each list the countries and regions you can send from, and China isn't on either list ([WeChat](https://wise.com/help/articles/1bd1dHKW4uB8p0lnFbzgoZ/how-to-send-and-receive-cny-via-wechat), [UnionPay](https://wise.com/help/articles/5rpQjZ2pueSOeIh5s2mh7w/how-to-send-and-receive-cny-via-unionpay)).
+
+So if your Wise personal account is registered with a China address, don't build your plan on these three. Some tutorials describe them as the normal way home, but that's not what Wise's own pages say, and Wise's pages win. This site hasn't checked it inside the Wise app, so before you start, look in your own app and go by what it shows. Wise also can't receive CNY into your account, which leaves one route: send the USD home as USD.
+
+## The money has to reach Wise first
+
+If your client hasn't paid yet, make sure they can pay you there. Wise says a personal account with a China address can get USD account details, though a Wise Business account can't ([USD account details](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)). As of 2026-11-19, Wise lists these receiving fees: ACH from inside the US is free, a domestic US wire is USD 6.11, and USD sent by Swift from outside the US is USD 6.11 ([receiving with USD details](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details), no page date shown).
+
+One thing Wise's pages don't spell out is whether a personal account can be used for business income your clients pay you. Ask Wise before you rely on it.
+
+## Send it by Swift to your own account in China
+
+A <Term k="Swift 电汇" /> is a bank-to-bank international transfer. Wise can send USD to bank accounts outside the US that are also in USD, and it does this by Swift. China is on its list. Wise also says this isn't the same as a regular Wise transfer: it can take up to 6 working days and costs a bit more, because it goes through intermediary banks ([countries you can send USD to by Swift](https://wise.com/help/articles/2974947/what-countries-and-regions-can-i-send-usd-to-via-swift)).
+
+What you need is a bank account in China, in your own name, that can receive USD, plus the details your bank uses for incoming international transfers, including its Swift code. The safest way to get those is to ask your bank. Wise says that if you enter a Swift code for a country it can't send to, it'll tell you when you set up the transfer.
+
+As of 2026-11-19, Wise's fee page puts China among the destinations where correspondent bank fees are predicted, with a Swift fee of USD 7.65 per transfer, plus Wise's own fee. Wise's worked example is a transfer from your Wise USD balance to a recipient in China who should receive USD 4,000. With correspondent fees predicted, it costs USD 8.78, which is the USD 7.65 Swift fee plus a USD 1.13 Wise fee ([cost of sending USD outside the US](https://wise.com/help/articles/2946451/how-much-does-it-cost-to-send-usd-to-countries-outside-the-us), no page date shown). Wise says it predicts what the banks along the way will deduct and adds it to your fee upfront, so the recipient gets the full amount. These numbers don't include conversion fees or fees for how you pay, and the app shows the total fee for your transfer when you set it up.
+
+```text
+Taken from Wise      = USD you send + USD 7.65 Swift fee + Wise fee (shown when you set it up)
+Reaching your bank   = USD you send (Wise says correspondent fees are already in the Swift fee)
+```
+
+Whether your bank charges for receiving an international transfer, and how much, isn't in any official source this site found, so ask your bank.
+
+## Once it arrives, settle it at your bank
+
+When the money reaches your account in China, it's still USD. To turn it into RMB, you do <Term k="结汇" /> at your bank. Within your <Term k="年度便利化额度" />, your own valid ID is enough, at the counter or in online or mobile banking ([Current Account FX Guidelines](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf), Article 55). That quota is USD 50,000 per person per year, counted by calendar year from 1 January to 31 December, and what you don't use doesn't carry over. It's a facilitation quota, not a ceiling: real income above it can still be settled with your ID and documents showing the transaction ([SAFE Xiamen](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). For what to bring when you go over, see [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+
+At Bank of China, for example, you log in to mobile banking, tap **结售汇** (FX settlement and purchase), go to **我的结售汇** (my FX) and pick the account, then tap **结汇** (settle) next to the foreign currency balance and fill in the details as prompted ([BOC personal settlement](https://www.boc.cn/pbservice/pb4/200806/t20080626_758.html)).
+
+<Callout type="ok">
+In **我的结售汇**, pick your foreign currency account and you can see the USD balance, with **结汇** next to it (that's Bank of China's mobile banking; other banks may use different names). If you see that, the Swift transfer has arrived and you can settle it.
+</Callout>
+
+Settlement uses the bank's rate at the time. ICBC, for example, says it settles at its own RMB spot FX rates and charges no fee on top, and its online and mobile banking handle settlement every day from 7:00 to 23:00 Beijing time ([ICBC FX Q&A](https://www.icbc.com.cn/page/721852384438681618.html)). For other banks, check that bank's own terms.
+
+```text
+RMB on your card = USD received × the bank's rate when you settle
+```
+
+## Stuck?
+
+<Q q="When I set up the transfer, Wise said the Swift code won't work.">
+Wise says it'll warn you if the Swift code belongs to a country it can't send USD to. China is on its Swift list, so check with your bank that this is the code for receiving USD from abroad, and that the account details are right.
+</Q>
+<Q q="It's been several days and the money hasn't arrived.">
+Wise says a USD Swift transfer can take up to 6 working days. If it's longer than that, check the transfer's status in Wise first, then ask your bank whether it has received it.
+</Q>
+<Q q="A tutorial says Wise can send to Alipay. Did I set something up wrong?">
+Probably not. Wise's Alipay page says personal senders in China can't, and the WeChat and UnionPay pages don't list China either. Go by Wise's own pages and what you see in your app.
+</Q>
+<Q q="I've nearly received USD 50,000 this year.">
+USD 50,000 is a facilitation quota, not a ceiling. For the part above it, take your ID and the documents for that income to the bank. See [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+</Q>
+
+Now you know the route: USD in Wise goes by Swift to your own account in China, and you settle it at the bank. To compare this with PayPal's RMB settlement, see [Bring it home in RMB](/en/guide/4-bring-home/).

@@ -1,5 +1,76 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: bad-tutorials
+step: 2
+time: 7-minute read
+for: You've found a tutorial online about getting paid from abroad or changing money, and you're not sure which steps are safe to follow
+tldr: If any step in a tutorial has you use an identity, address, account or quota that isn't yours, split money up, write a purpose that isn't true, or turn crypto into RMB, skip that step, even if the rest is right. Each of these has a rule or agreement against it.
+description: "How to spot a tutorial you shouldn't follow: opening accounts abroad with a borrowed address or identity, using someone else's ID or quota, splitting amounts, writing a false purpose for a transfer, and cashing crypto out to RMB, with the SAFE rule or provider agreement each one breaks and a link to the original; plus a few claims that don't match the official pages."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+
+You search for how to get paid from abroad and land on a "complete guide" with hundreds of thousands of views. Most of it makes sense: open the account with your own ID, link a card in your own name, state the purpose truthfully. Then halfway down, one step says, almost in passing, "if a payment is over the limit, just split it into several," and you find yourself nodding along. When you finish this page, you'll have a short checklist to hold any tutorial against: which practices mean stop, which rule or agreement each one breaks, and where the original text is.
+
+<mark>If any step in a tutorial has you use an identity, address, account or quota that isn't yours, or split money up, or write a purpose that isn't true, don't follow that step, even if everything else in it is right.</mark>
+
+Every practice below comes from real posts that have circulated widely online. This site doesn't name them or link to them. It only describes the practice and the line it crosses.
+
+## Opening an account with an address or identity from somewhere you don't live
+
+**What it looks like.** A guide to registering a US or Hong Kong PayPal account, or a Hong Kong Stripe account, with an address where you don't live, or a claim that a Chinese passport is enough for a Hong Kong individual account.
+
+**The line it crosses.** These accounts are opened according to where you really live. PayPal's US user agreement requires individuals to be US residents and lists giving false, inaccurate or misleading identity information as a restricted activity ([PayPal US user agreement](https://www.paypal.com/us/legalhub/paypal/useragreement-full)). PayPal Hong Kong requires individuals to be Hong Kong residents ([PayPal Hong Kong user agreement](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=en_HK)). Stripe's support page says Hong Kong accounts for individuals don't accept non-Hong Kong ID numbers ([Stripe support](https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses); this site only has an extract made by a fetch tool). 贝宝支付's agreement also lists opening a new account with information that isn't yours, such as a name, address or email address, as a restricted activity ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). For more, see [Thinking of a US PayPal account? Read this first](/en/howto/us-paypal/).
+
+## Using someone else's ID, bank card, account or quota
+
+**What it looks like.** Having a friend receive the money in their account for you; using a relative's or someone else's quota to settle your money; switching to the next recipient once one recipient's limit is used up; money landing on your card from an account that isn't yours.
+
+**The line it crosses.** SAFE's Guidelines say people who use someone else's facilitation quota go straight onto the <Term k="关注名单" />, and people who lend theirs get a risk warning first and go on the list if they do it again. For the year they're listed and the next two, everyone on the list needs transaction documents for every settlement or purchase ([Current Account FX Guidelines](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf), Article 62). Moving money between personal FX accounts inside China is limited to your own accounts, and between you and close relatives (Article 67). And only close relatives can settle or buy foreign currency on your behalf within the quota, with ID, a written authorisation and proof of the relationship (Article 61). PayPal's agreement lists using someone else's PayPal account as a restricted activity ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+## Splitting money so each part stays under a line
+
+**What it looks like.** "If a payment is over the limit, split it into several," so each one sits just under USD 50,000, or a claim that banks have an unwritten rule of "only so many transfers a year", so you should spread them out.
+
+**The line it crosses.** Article 7 of the Personal FX Measures says banks and individuals may not get around the limits by splitting amounts or any similar method ([Personal FX Measures](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)). Article 62 of the Guidelines says it again: individuals may not split amounts or use similar methods to get around the facilitation quota or authenticity checks. ICBC's Q&A answers this too: you can't break a large settlement into several amounts under USD 50,000 and have several people settle them ([ICBC FX Q&A](https://www.icbc.com.cn/page/721852384438681618.html)). As for the "unwritten rule" on counts, SAFE Xiamen's answer is that for a domestic individual receiving money from abroad, there's no such thing as an amount or count limit; the amount depends on whether there's a real, compliant transaction behind it, though you still may not split payments to get around supervision ([SAFE Xiamen](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). If your real income goes over USD 50,000, take the documents to your bank. See [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+
+## Writing a purpose that isn't true
+
+**What it looks like.** Advice to pick an "unremarkable" purpose for a transfer so the bank asks fewer questions, or to describe payment for goods or services as something else.
+
+**The line it crosses.** Article 57 of the Guidelines says a domestic individual buying foreign currency must fill in the *Personal FX Purchase Application* truthfully, accurately and completely, and is legally responsible for it ([Guidelines](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Article 7 of the Measures also bans using false commercial documents or records to get around authenticity checks. Write real income down as what it is, and when it goes over the quota, bring the matching documents.
+
+## Turning crypto into RMB
+
+**What it looks like.** Changing the money you've received into cryptocurrency, then using an exchange's C2C or OTC dealers to change it back into RMB. Some tutorials even mention that the money paid to you doesn't come from your own account.
+
+**The line it crosses.** The PBoC notice says exchanging fiat currency for virtual currency, and providing brokerage and pricing services for virtual currency trading, are illegal financial activities, and that offshore virtual currency exchanges serving mainland residents over the internet are illegal financial activities too ([PBoC notice 银发〔2021〕237号](https://www.pbc.gov.cn/tiaofasi/144941/3581332/4348658/index.html)). This site says nothing at all about this route.
+
+<Callout type="no" title="If you hit one of these, stop at that step">
+A borrowed address or identity, someone else's account or quota, a split amount, a purpose that isn't true, crypto turned into RMB. You can keep reading the rest of the tutorial, but don't do that step.
+</Callout>
+
+## One more kind: claims that don't match the official pages
+
+Some tutorials don't cross a line, they're just wrong, and following them sends you on a wasted trip. Common ones:
+
+- "Settling money you bring back from your own Hong Kong account doesn't use your quota." Articles 54 and 56 of the Guidelines say personal settlement uses the annual facilitation quota unless you settle with your ID and transaction documents ([Guidelines](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+- "Send the money in Wise straight to Alipay or WeChat." Wise's Alipay page says personal senders in China can't, and its WeChat and UnionPay pages don't list China as a country you can send from. See [Move USD from Wise to your Chinese bank card](/en/howto/wise-to-bank/).
+- "Each person can only change USD 50,000 a year." That's the <Term k="年度便利化额度" />, not a ceiling, as SAFE Xiamen spells out.
+- Limits or fees for a channel that don't match the provider's own pages. Go by the provider's pages.
+
+## How to check a tutorial
+
+You don't need to look up the rules for every step. Start with three questions. Whose name, whose address and whose account does this step use? Is this one complete, real payment? Is the purpose written down true? If the answers are "mine", "yes" and "yes", then check the step against the provider's and SAFE's own pages. Every fact on this site links to its original; where a post and an official page disagree, the official page wins.
+
+## Stuck?
+
+<Q q="I've already done one of these steps. What now?">
+This site isn't legal advice and can't judge the consequences for you. What it can tell you is what the rules say. Someone put on the watch list is told by the bank, which prints a notice the first time they do personal FX business at the counter ([Guidelines](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf), Article 63). For anything about an account, the provider's agreement applies, so ask the provider directly. From now on, go back to accounts in your own name and do things as they really are.
+</Q>
+<Q q="The tutorial's author says they've always done it this way and never had a problem.">
+Whether it's caused a problem and whether the rules allow it are two separate questions. This site goes by the text of the rules and agreements, and where something doesn't match, the text wins.
+</Q>
+
+You now have a checklist: someone else's identity or account, split amounts, a purpose that isn't true, crypto. When you hit one, stop. To see where the legitimate route starts, go to [Full guide step 2: Open it in your own name](/en/guide/2-open/).

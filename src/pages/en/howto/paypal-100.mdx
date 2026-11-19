@@ -1,5 +1,108 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: paypal-100
+step: 5
+time: 8-minute read
+for: You get paid in USD by buyers abroad on a 贝宝支付 personal seller account and want to know what gets taken along the way
+tldr: USD 100 goes through three legs before it reaches your card. Receiving takes 4.40% plus USD 0.30, settling to RMB takes a settlement fee plus 6% VAT on that fee, and the conversion fee is built into the exchange rate. Work it out leg by leg and every number matches a fee page.
+description: "A leg-by-leg sum for a USD 100 PayPal payment: the receiving fee, the RMB settlement fee and its VAT, and the conversion fee on a 贝宝支付 account, which page and date each comes from, why the 0.5% cap wording isn't confirmed, and how an older c2 account's USD 35 wire withdrawal works out."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+
+A buyer abroad pays USD 100 in your shop, and PayPal emails you to say the money's in. Then you settle it to RMB, look at your bank card, and it's noticeably less than you expected, and you can't say where the rest went. When you finish this page, you'll have a sum laid out leg by leg: how much each leg of that USD 100 took, and which rate on which page it came from. Next time a different amount comes in, you can plug it in yourself.
+
+<mark>A payment takes three legs to reach your card, and each takes its own cut: the receiving fee, the RMB settlement fee plus VAT, and a conversion fee built into the exchange rate. Count them one leg at a time and you'll see exactly where the money went.</mark>
+
+## Which account this page is about
+
+PayPal runs two account systems in mainland China, with different fees and different ways to withdraw. This page works through the newer one, an account at 贝宝支付（北京）有限公司 (PayPal's Beijing payment company), where an individual seller signs up as a "个人类别的企业用户", an enterprise user in the individual category ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh), last updated 2026-05-28). The older c2 accounts opened with PayPal Pte. Ltd. bring money home another way, covered on its own at the end.
+
+The sums below assume the buyer pays in USD and the payment is international: the buyer is abroad and you're in mainland China.
+
+## Leg 1: the receiving fee
+
+As of 2026-11-19, PayPal's merchant fee page says that receiving an international payment costs 4.40% plus a fixed fee, and the fixed fee for USD is USD 0.30 ([merchant fee page](https://www.paypal.com/c2/business/paypal-business-fees?locale.x=zh_C2), last updated 2025-06-18). You might wonder why a 贝宝支付 account goes by a page on paypal.com. That page says so itself: its fees apply to accounts opened at 贝宝支付 under the cross-border user agreement and the worldwide terms. Meanwhile 贝宝支付's own [fee centre](https://www.paypal.cn/portal/fees?locale.x=zh) lists only the settlement and conversion fees under **PayPal跨境收款** (PayPal cross-border collection).
+
+```text
+Receiving fee          = 100 × 4.40% + 0.30 = 4.40 + 0.30 = USD 4.70
+Left in PayPal balance = 100 − 4.70 = USD 95.30
+```
+
+## Leg 2: settling to RMB, plus VAT
+
+To turn the USD in your balance into RMB on your card, you use **PayPal跨境收款**, which settles your balance in RMB to the Chinese bank card you've linked. As of 2026-11-19, the fee centre's **人民币结算费** (RMB settlement fee) card shows a standard rate of 1.0%. From 15 January to 31 December 2026 (Beijing time) there's a limited-time offer, which the card shows as "0.5%封顶", and it applies only to settlements from your USD balance. The fee centre also says the fee doesn't include VAT, and that when it charges the settlement fee it charges 6% VAT on that fee's amount as well ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). PayPal China keeps the right to change the offer's dates, and once the offer ends the rate goes back to 1.0%.
+
+So this leg has two numbers. Work out the settlement fee first, then take 6% of it:
+
+```text
+At the standard 1.0%:
+  Settlement fee = 95.30 × 1.0% = 0.953 ≈ USD 0.95
+  VAT            = 0.953 × 6%   ≈ USD 0.06
+  Left           ≈ 95.30 − 0.95 − 0.06 = USD 94.29
+
+Taking the offer at face value, 0.5%:
+  Settlement fee = 95.30 × 0.5% = 0.4765 ≈ USD 0.48
+  VAT            = 0.4765 × 6%  ≈ USD 0.03
+  Left           ≈ 95.30 − 0.48 − 0.03 = USD 94.79
+```
+
+<Callout type="warn" title="How the 0.5% cap works isn't confirmed">
+On the fee centre card, the number is 0.5 and the unit reads "%封顶", which means "% cap". It could be a flat 0.5%, or a tiered fee that never goes above 0.5%. The fee centre says the exact rates are on an offer page you see after logging in, and this site hasn't seen that page. PayPal's pages don't spell this out, so ask PayPal China before you count on either reading.
+</Callout>
+
+Two more things decide how much you can settle this time. Each settlement request has to be at least USD 20. And you can't always settle your whole balance. PayPal works out an amount you can settle (**可收款额度**) from your transaction records and updates it once a day, and the more complete your transaction details are, such as product names and shipping information, the higher it goes ([FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)).
+
+## Leg 3: the conversion fee is in the rate
+
+The last leg changes USD into RMB, which is <Term k="结汇" />. As of 2026-11-19, the fee centre's **货币兑换费用或服务费用** (conversion or service fee) card says the conversion is done by PayPal's service partner outside China. Converting USD or HKD to RMB has a limited-time rate of 0% from 15 January to 31 December 2026 (Beijing time), and a standard rate of 0.2%. Converting any other currency to RMB costs 2.5% ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)).
+
+This <Term k="换汇费" /> isn't taken out of your balance on its own line. It's built into the exchange rate, which PayPal adjusts as it goes, and every time you start a settlement the page shows you the rate it's using. Because that rate keeps changing, this site won't fill in an RMB figure for you:
+
+```text
+RMB on your card = USD left × the rate the page shows for this settlement
+```
+
+## All three legs together
+
+```text
+USD 100
+− receiving fee USD 4.70 (4.40% + 0.30)
+= USD 95.30
+− settlement fee (95.30 × 1.0%, or 0.5% at face value during the offer)
+− VAT (settlement fee × 6%)
+≈ USD 94.29 (at 1.0%) or USD 94.79 (at 0.5%)
+× the rate shown when you settle (USD conversion fee built in: 0% during the offer, 0.2% standard)
+= RMB on your card
+```
+
+Each line matches a fee page, so when one leg's rate changes, you only change that line. Settlements submitted before 13:00 Beijing time on a working day usually arrive the same day. Those submitted after 13:00, or on weekends and holidays, are processed on the next working day ([FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)).
+
+## An older c2 account: USD 35 per wire
+
+If you're on a c2 account opened years ago with PayPal Pte. Ltd., the receiving leg goes by the same merchant fee page (c2's personal fee page sends sellers there for selling rates), but the way home is different. Among the withdrawal methods in c2's help centre, the one that reaches mainland China is a USD wire to your bank account there, and then you settle it at the bank yourself. As of 2026-11-19, c2's fee page lists a mainland China wire withdrawal at USD 35.00 each ([c2 fee page](https://www.paypal.com/c2/webapps/mpp/paypal-fees?locale.x=zh_C2), last updated 2021-07-30). The help centre says a wire has to be at least USD 150 and takes 3 to 7 working days ([how to withdraw](https://www.paypal.com/c2/cshelp/article/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%88%91%E7%9A%84paypal%E8%B4%A6%E6%88%B7%E6%8F%90%E5%8F%96%E8%B5%84%E9%87%91%EF%BC%9F-help394)).
+
+So a single USD 100 payment, at USD 95.30 after the receiving fee, isn't enough to withdraw. You'd wait until you have USD 150 or more:
+
+```text
+USD reaching your bank = amount withdrawn − USD 35.00 (each)
+Say you withdraw USD 150: 150 − 35 = USD 115
+RMB on your card       = USD received × your bank's rate when you settle
+```
+
+The USD 35 is fixed per withdrawal, so the less you withdraw, the bigger its share. When the USD reaches your bank, settling it uses your <Term k="年度便利化额度" />, USD 50,000 per person per year. That's a facilitation quota, not a ceiling: real income above it can still be settled with documents ([SAFE Xiamen](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). Whether your bank charges for an incoming wire, and how much, isn't in any official source this site found, so ask your bank. PayPal's help centre also suggests contacting your bank before you withdraw. One more thing: c2's user agreement says personal c2 accounts registered after 2026-06-30 can only receive payments from friends and family, not payments for goods ([c2 user agreement](https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2)).
+
+## Stuck?
+
+<Q q="My balance shows USD 95, but the amount I can settle is 0.">
+PayPal's FAQ says the amount you can settle is estimated from complete transaction information with a real cross-border transaction behind it. It's never higher than your available balance, and it usually updates once a day. Fill in the details, such as product names and shipping information. If the **原始订单中心** (original order centre) page lists original transaction numbers, complete the template it gives you, and the amount is worked out again ([FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)).
+</Q>
+<Q q="The buyer paid in euros, not USD.">
+The fixed part of the receiving fee depends on the currency received, so look up that row on the merchant fee page. For the conversion to RMB, the fee centre lists 2.5% for other currencies, and the settlement fee offer only covers USD balances ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)).
+</Q>
+<Q q="I refunded the buyer. Do I get the receiving fee back?">
+The merchant fee page says refunding a commercial payment is free, but the fees you paid to receive it aren't returned ([merchant fee page](https://www.paypal.com/c2/business/paypal-business-fees?locale.x=zh_C2)).
+</Q>
+
+You can now work out a PayPal payment leg by leg: the receiving fee, the settlement fee plus VAT, and the conversion fee in the rate, each tied to its own fee page. To set it next to other ways of getting paid, go on to [Add up each leg's fees](/en/guide/5-fees/).

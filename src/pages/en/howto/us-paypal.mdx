@@ -1,5 +1,60 @@
 ---
 layout: ../../../layouts/HowTo.astro
 slug: us-paypal
+step: 1
+time: 6-minute read
+for: A US client has asked for "your PayPal", and you're wondering whether to open a US PayPal account
+tldr: A US PayPal account is only for people who live in the US, and a Hong Kong one only for people who live in Hong Kong. If you live in mainland China, opening one means giving untrue identity or address details, which PayPal's agreements forbid. US clients can still pay into a proper account in your own name.
+description: "Can you open a US PayPal account if you live in mainland China? PayPal's US user agreement requires individuals to be US residents, bans false identity information and allows holds of up to 180 days; PayPal Hong Kong and Stripe also go by where you really live. Plus the accounts in your own name that US clients can pay you through."
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+import Callout from "../../../components/Callout.astro";
+
+You've agreed a price with a US client, and their last line is "Just send me your PayPal." You search around, and plenty of posts say a US PayPal account is the easy way: you'd get paid by Americans just like a local. It's a natural thought. The client is in the US, the account would be in the US, and it seems to cut out a lot of steps. When you finish this page, you'll know why a US account isn't an option for you and what PayPal's own agreement says, and you'll know which accounts in your own name can take a US client's payment.
+
+<mark>PayPal opens accounts according to where you really live: US accounts for people in the US, Hong Kong accounts for people in Hong Kong. If you live in mainland China, the one you can open is a 贝宝支付 account, and US buyers can pay into it just the same.</mark>
+
+## A US PayPal account: the agreement says you must live in the US
+
+PayPal's US user agreement sets out who can open an account right at the start: "If you are an individual, you must be a resident of the United States or one of its territories and at least 18 years old, or the age of majority in your state of residence to open a U.S. PayPal account and use the PayPal services." A business must be organized in, operating in, or a resident of the US ([PayPal US user agreement](https://www.paypal.com/us/legalhub/paypal/useragreement-full), last updated 2026-11-04).
+
+The same agreement's list of restricted activities includes providing false, inaccurate or misleading information about your identity, account or business. Among the actions PayPal can take is holding the balance in your account for up to 180 days, and longer under a court order.
+
+Put those two together and the answer is plain. Living in mainland China, you don't meet the agreement's conditions for opening an account in the first place. The only way to open one would be to enter an address where you don't live, or some other untrue detail, and that's exactly what the agreement forbids. Once a hold is on, you could be unable to touch your clients' payments for half a year.
+
+## Hong Kong PayPal and Hong Kong Stripe work the same way
+
+So what about Hong Kong? PayPal Hong Kong's user agreement says an individual must be a resident of Hong Kong SAR aged at least 18, and a business must be organised and operating in Hong Kong ([PayPal Hong Kong user agreement](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=en_HK), last updated 2026-05-28). To confirm your identity, you photograph both sides of your Hong Kong ID card and take a selfie in the PayPal app ([PayPal Hong Kong identity check](https://www.paypal.com/hk/cshelp/article/how-do-i-confirm-my-identitycip-help606)).
+
+Stripe is the same. Its list of supported countries and regions includes Hong Kong but not mainland China ([Stripe global availability](https://stripe.com/global)). Stripe's support page also says it can't accept non-Hong Kong ID numbers for people signing up for a Hong Kong account as individuals ([Stripe support](https://support.stripe.com/questions/requirements-for-hong-kong-based-businesses)). For that line this site only has an extract made by a fetch tool, not a word-for-word check of the page in a browser, so go by what Stripe's page says.
+
+Look the other way and 贝宝支付's agreement follows the same rule. An individual seller must be a Chinese resident aged at least 18, must be a China tax resident only and can't be a US tax resident, and falsely claiming to be a Chinese resident is itself a restricted activity ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). Each PayPal opens accounts for the people who live where it operates, and the one for you is the one where you live.
+
+## How to take a US client's payment
+
+So the real question is how your US client will pay, and which <Term k="收款账户" /> you'll receive it in. [Step 1 of the full guide](/en/guide/1-choose/) covers this in detail. Here's the outline, and the rule of thumb is to let the payer decide.
+
+**The client wants to pay by PayPal.** Open a 贝宝支付 personal seller account ([paypal.cn](https://www.paypal.cn/)). It takes PayPal payments from buyers abroad, such as checkout, invoices and payment links, and settles them in RMB to your bank card through **PayPal跨境收款** (PayPal cross-border collection). To sign up you need an email address, an 11-digit mainland mobile number, a valid ID card, and a face check ([personal seller registration guide](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)). For what a payment loses along the way, see [What a USD 100 PayPal payment leaves you with](/en/howto/paypal-100/). One thing to watch: PayPal's pages don't say whether personal seller accounts can receive service income, such as freelance or creator income, and settle it in RMB. Ask PayPal China before you rely on it.
+
+**The client wants to pay by bank transfer.** A Wise personal account with a China address can still get USD account details. ACH transfers from inside the US come in free, and a domestic US wire costs USD 6.11 (as of 2026-11-19, [Wise receiving fees](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)). For getting that money home, see [Move USD from Wise to your Chinese bank card](/en/howto/wise-to-bank/). Wise's pages don't say whether a personal account can receive business income either, so ask Wise first. Payoneer also has individual accounts for people in mainland China, meant for people who hold only a personal bank account and don't own a business ([Payoneer individual account guide](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)).
+
+**The client's platform pays out through Stripe.** You can't open a Stripe account yourself, but platforms in the US and UK can use Stripe's Global Payouts to send USD by wire to individuals in China. The service is in private preview, and it asks for your email, name, address (not a PO box), date of birth and phone number ([Stripe recipient requirements](https://docs.stripe.com/global-payouts/recipient-requirements.md)). The fees are set by the platform paying you.
+
+<Callout type="tip">
+Tell your client straight away that you're in mainland China, then give them a way to pay that works for them: a PayPal invoice or payment link from your 贝宝支付 account, or your Wise USD account details.
+</Callout>
+
+## Stuck?
+
+<Q q="My client says PayPal is the only way they know how to pay.">
+That works. A 贝宝支付 account takes PayPal payments from buyers abroad, so your client pays from their own PayPal as usual and never needs to think about where your account is. On your side, check first whether a personal seller account can receive your kind of income.
+</Q>
+<Q q="Posts online say a Chinese passport is enough for a Hong Kong account.">
+PayPal Hong Kong requires individuals to be Hong Kong residents, and Stripe's support page (which this site only has as an extract) says Hong Kong accounts for individuals don't accept non-Hong Kong ID numbers. A passport doesn't make you a Hong Kong resident, so this route doesn't work.
+</Q>
+<Q q="I already have a PayPal account opened with a US address.">
+Under PayPal's US user agreement, giving untrue identity or account information is a restricted activity, and PayPal can hold your balance for up to 180 days. This site doesn't cover what to do with such an account and isn't legal advice. Stop taking new payments into it, and ask PayPal directly about the account. For future payments, use an account in your own name, where you really live.
+</Q>
+
+In the end, choosing where to get paid starts with where you really live, then how your client pays. In that order, carry on with [Full guide step 1: Pick a receiving account](/en/guide/1-choose/).
