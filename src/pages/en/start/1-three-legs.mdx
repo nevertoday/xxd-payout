@@ -1,5 +1,92 @@
 ---
 layout: ../../../layouts/Lesson.astro
+tldr: "Money from abroad takes three legs to reach your card: the payer pays in, it lands in a receiving account in your name, and then it becomes RMB on your card. Each leg takes its own cut, so you add it up one leg at a time."
 lesson: 1
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+You've landed your first client abroad. You delivered, sent a USD 100 invoice, and today the client wrote back to say they've paid. You open PayPal and the balance says USD 95.30. Then you open your banking app, and nothing has reached your card yet.
+
+Where did the missing USD 4.70 go? And how does the rest turn into RMB on your card? The money isn't lost. It has just finished the first leg of the trip.
+
+## What the three legs are
+
+Between your client's account and your bank card, there are three legs:
+
+1. **The payer pays you.** How your client pays decides which kind of account the money lands in first. A buyer who uses PayPal pays into PayPal, a marketplace pays out by its own rules, and some clients only know how to send a bank transfer.
+2. **The money lands in a <Term k="收款账户" /> in your own name.** At this point it's still US dollars, sitting in an account abroad. It isn't money on your card yet. The USD 95.30 in the story is sitting right here.
+3. **It becomes RMB on your card.** Either the provider converts it for you and pays it to the Chinese bank card you linked, or you send the dollars to your bank in China and sell them to the bank for RMB there. That last step is called <Term k="结汇" />.
+
+Each leg has its own toll booth, and what each one charges is written on that provider's own fee pages. So:
+
+<mark><strong>Money from abroad takes three legs to reach your card, and each leg takes a cut. To know what you'll end up with, add it up one leg at a time, not from a single "take-home rate".</strong></mark>
+
+## Working it through with PayPal
+
+The example below uses the new accounts on paypal.cn. These accounts are with 贝宝支付 (PayPal's company in Beijing), and an individual opens what PayPal calls a "personal seller" (个人卖家) account. To bring money home it uses **PayPal跨境收款** (PayPal's cross-border RMB payout), which converts your balance to RMB and pays it to the Chinese bank card you linked ([PayPal cross-border payout FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)).
+
+**As money comes in, a receiving fee.** As of 2026-11-19, PayPal's merchant fee page (which says it was last updated on 2025-06-18) lists 4.40% plus a fixed fee for receiving international payments, and the fixed fee is USD 0.30 when you receive US dollars. The page says it applies to accounts opened with 贝宝支付 under its cross-border user agreement ([merchant fee page](https://www.paypal.com/c2/business/paypal-business-fees?locale.x=zh_C2)). So when USD 100 comes in, 4.40 + 0.30 = USD 4.70 comes off first, leaving USD 95.30.
+
+**As money goes out, a settlement fee.** When you settle your balance to RMB on your card, 贝宝支付 charges an RMB settlement fee. As of 2026-11-19, its fee centre gives a standard rate of 1.0%. From 2026-01-15 to 2026-12-31 (Beijing time) there's a limited-time offer for USD balances only, and the fee card shows it as "0.5%封顶" ("0.5%, capped"). On top of that it charges 6% VAT on the settlement fee ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). At the standard rate, 1.0% of USD 95.30 is about USD 0.95, and the VAT is about USD 0.06.
+
+**As it becomes RMB, the conversion cost.** The fee centre calls this one "货币兑换费用或服务费用" (currency conversion fee or service fee). Depending on which partner handles your payout, it's either built into the exchange rate or charged as a separate service fee, never both. As of 2026-11-19, the standard rate for turning USD or HKD into RMB is 0.2% either way, with a limited-time offer from 2026-01-15 to 2026-12-31 as well. Each time you request a payout, the page shows you the rate it will use, and any separate service fee ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). That's why a <Term k="换汇费" /> is so often invisible: it's inside the rate, with no line of its own on your statement.
+
+Put the three legs together and you get one formula:
+
+RMB on your card = (USD 100 − receiving fee − settlement fee − VAT on the settlement fee − any separate service fee) × the rate for this payout
+
+At the standard rates and with no separate service fee, the part in brackets comes to about USD 94.29, which is then converted at that payout's rate. During the offer the settlement fee is lower, but the fee centre doesn't say whether "0.5%封顶" means a flat 0.5% or a tiered fee that tops out at 0.5%, and the tier details are behind a login. PayPal's pages don't say. Ask PayPal China before you rely on it. For the whole payment worked through step by step, see [What a USD 100 PayPal payment leaves you with](/en/howto/paypal-100/).
+
+<Callout type="warn" title="If you're paid for services, ask first">
+This lesson uses a PayPal personal seller account as the example because its fee pages list every leg. But PayPal's pages don't say whether a personal seller account can take service income, like freelance design or development work or creator income, and settle it in RMB. Ask PayPal China before you open one.
+</Callout>
+
+## Why one "take-home rate" doesn't work
+
+Because each cut is taken at a different moment, on a different amount. The receiving fee is charged on the whole payment and carries a fixed USD 0.30, so the smaller the payment, the bigger the share it takes: on a USD 10 payment, the 0.30 alone is 3%. The settlement fee is charged on the part of the balance you settle. And the conversion cost hides inside the rate. A tutorial that says "you keep 95%" can't tell you what each leg takes, or which day's fee page it read, so when you do the sums yourself, they don't match.
+
+That's why this site always lists money leg by leg, with the page each number came from and the date it was checked. Fee pages change, so when you do your own sums, write down the date too.
+
+## Another provider, the same three legs
+
+However your client pays and whichever provider you use, the money takes these same three legs home. Only the toll booths change hands. When you meet a new provider, ask three questions: where does the money come in, which account does it land in first, and how does it become RMB on my card? Then find each leg's number on that provider's own fee pages. [Step 5](/en/guide/5-fees/) of the full guide is all about doing those sums.
+
+You now have a picture of how the money travels and what each leg costs. But when you go to settle at your bank, you'll run into a number: USD 50,000 per person per year. SAFE is clear that it's a facilitation quota, not the most you can change in a year ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). [Lesson 2](/en/start/2-quota/) explains what it covers and what it doesn't.
+
+## If something's off
+
+<Q q="My client says they can only pay by bank transfer.">
+
+Then you need an account that gives you bank details to share. A Wise personal account, for example, can get USD receiving details (Wise calls them **account details**), and your client can pay into them by a transfer inside the US, or by Swift in US dollars from outside the US ([Wise help page](https://wise.com/help/articles/2827506/how-do-i-receive-money-with-my-usd-account-details)).
+
+It's the same three legs with different toll booths. As of 2026-11-19, Wise says ACH transfers from inside the US are free to receive, and wires and Swift payments cost USD 6.11 each (same page). For the leg home, you send the dollars by <Term k="Swift 电汇" /> to your own bank account in China, and China is on Wise's list of places it can send USD to ([Wise help page](https://wise.com/help/articles/2974947/what-countries-and-regions-can-i-send-usd-to-via-swift)). Also as of 2026-11-19, Wise's own example is sending USD 4,000 to China for USD 7.28, made up of a USD 6.15 Swift fee and a USD 1.13 Wise fee. When it expects banks along the way to take a cut as well, the same transfer is USD 8.78 ([Wise help page](https://wise.com/help/articles/2946451/how-much-does-it-cost-to-send-usd-to-countries-outside-the-us)). None of these pages shows a date. Once the dollars reach your bank, you settle them there. Whether your bank charges to receive the transfer, and how much, is a question for your bank.
+
+One more thing: Wise's pages don't say whether a personal account can receive business income. Ask Wise before you rely on it. For the full steps, see [Move USD from Wise to your Chinese bank card](/en/howto/wise-to-bank/).
+
+</Q>
+<Q q="The money comes from a marketplace.">
+
+Marketplace payouts can go into an account like Payoneer (派安盈) or WorldFirst (万里汇). Payoneer's pricing page lists "from marketplaces" as a category of its own, with the fee depending on the marketplace ([Payoneer pricing](https://www.payoneer.com/pricing/)), and WorldFirst says it connects directly with more than 130 marketplaces ([WorldFirst home](https://www.worldfirst.com.cn/)). Both can convert the money to RMB and pay it to a Chinese bank card in your own name ([Payoneer FX page](https://www.payoneer.com/zh-hans/marketplace/fx-foreign-exchange/), [WorldFirst: adding a recipient](https://www.worldfirst.com.cn/content/articles/b2c_portal/ug_es5jx)).
+
+Same three legs again. As of 2026-11-19, Payoneer's pricing page (last updated 2026-01-01) lists 1.2% to 4% for withdrawing to a bank with currency conversion. It also says the page is an estimate that can differ by territory, and that the numbers that apply to you are the ones on the fees page in your account ([Payoneer pricing](https://www.payoneer.com/pricing/)). As of the same date, WorldFirst's pricing page says new users pay 0.3% and that its rate is "对标市场汇率" (pegged to the market rate), with no date on the page ([WorldFirst pricing](https://www.worldfirst.com.cn/cn/pricing/)). To pick an account that fits the platform paying you, see [step 1](/en/guide/1-choose/) of the full guide.
+
+</Q>
+<Q q="My PayPal is an older account I opened on paypal.com.">
+
+Older accounts are with PayPal Pte. Ltd. in Singapore, and the leg home works differently: you wire the dollars to your bank in China, and once they arrive you settle them at the bank. As of 2026-11-19, the consumer fee page for these accounts (last updated 2021-07-30) lists USD 35.00 per wire to a bank in mainland China ([consumer fee page](https://www.paypal.com/c2/webapps/mpp/paypal-fees?locale.x=zh_C2)), and the help page gives a USD 150 minimum and 3 to 7 working days to arrive ([help page](https://www.paypal.com/c2/cshelp/article/%E5%A6%82%E4%BD%95%E4%BB%8E%E6%88%91%E7%9A%84paypal%E8%B4%A6%E6%88%B7%E6%8F%90%E5%8F%96%E8%B5%84%E9%87%91%EF%BC%9F-help394)). Every wire costs USD 35, so the less you send at a time, the bigger the share it takes.
+
+The older accounts' agreement also says that personal accounts registered after 2026-06-30 can only receive payments between friends and family, not payments for goods and services, and that anyone with a business account also needs to open an account with 贝宝支付 ([older accounts' user agreement](https://www.paypal.com/c2/legalhub/paypal/useragreement-full?locale.x=zh_C2)).
+
+</Q>
+<Q q="There's money in my balance, but the amount I can pay out is 0, or less than the balance.">
+
+PayPal's FAQ explains it like this. Money in and out of China needs a real, lawful transaction behind it, so PayPal reviews every payout request. The amount you can pay out is estimated from your account information and transaction records, never exceeds your available balance, and is usually updated once a day. The fuller your transaction details, such as product names and shipping information, the easier it is for the system to work out ([PayPal cross-border payout FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)). That's one reason to keep your paper trail from day one, which is what [step 3](/en/guide/3-paper-trail/) of the full guide is about.
+
+</Q>
+<Q q="The RMB on my card is less than I worked out from the exchange rate.">
+
+Before you assume something was overcharged, check it one leg at a time. Work out the receiving fee first, at 4.40% plus USD 0.30. For the settlement fee, the VAT and the rate, use the numbers the page showed you when you requested the payout, not a rate you saw in the news or in another app ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). Go through [What a USD 100 PayPal payment leaves you with](/en/howto/paypal-100/) and see which leg the difference is in.
+
+</Q>

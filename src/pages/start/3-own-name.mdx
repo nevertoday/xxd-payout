@@ -1,5 +1,86 @@
 ---
 layout: ../../layouts/Lesson.astro
+tldr: "收款平台开户时认的是你本人：你是谁，你真正住在哪。所以账户只能用你自己的身份证、真实地址开，收的钱也只进你自己的账户。"
 lesson: 3
 ---
-{/* 待写：正文。写法见 docs/MAINTAINING.md 的「怎么写」和「硬规矩」，资料和出处在 docs/sources/README.md。 */}
+import Callout from "../../components/Callout.astro";
+import Term from "../../components/Term.astro";
+import Q from "../../components/Q.astro";
+
+美国的客户在邮件里顺口问了一句：「你有美国的 PayPal 吗？有的话我付起来方便。」你上网一搜，这样的教程还真不少，有的说用一个美国的转运地址就能注册，听上去只是在地址栏里换几个字。
+
+可地址那一栏问的，恰恰是开户时最要紧的事。
+
+## 开户那一刻，平台在问你是谁
+
+每一家收款平台开户前，都要先弄清楚你是谁、住在哪，再决定你能开哪种账户。翻一翻它们的协议和帮助页，写的都是这件事：
+
+- **贝宝支付**（paypal.cn 的新账户）的协议写着，个人开户必须是中国居民、年满 18 岁；账户的主人只能是中国税收居民，不能是美国税收居民（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)，最后更新 2026-05-28）。注册要用中国大陆的身份证和 11 位手机号，人脸识别要你本人扫码来做（[个人卖家注册指南](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)）。
+- **PayPal 香港**只给香港特别行政区的居民开个人账户，还要年满 18 岁（[香港用户协议](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=zh_HK)，最后更新 2026-05-28）。
+- **PayPal 美国**只给美国或其属地的居民开个人账户，同样要年满 18 岁（[美国用户协议](https://www.paypal.com/us/legalhub/paypal/useragreement-full)，最后更新 2026-11-04）。
+- **Stripe** 支持的国家和地区名单里有香港，没有中国大陆（[Stripe 全球可用范围](https://stripe.com/global)）。
+- **Wise** 能不能给你开美元的收款账户信息，看你的地址在哪个国家（[Wise 帮助页](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)）。
+- **Payoneer**（派安盈）中国内地的个人账户，提现用的银行账户要在你自己名下，中文名、拼音名和身份证号都要和你前面填的一致（[个人账户注册指引](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/)，最后修改 2025-04-01）。
+
+这些规矩写法各不一样，问的其实是同一件事：
+
+<mark><strong>收款平台按你本人来决定能不能开户：你是谁，你真正住在哪。所以账户只能开在你自己名下，用你的身份证和真实地址。</strong></mark>
+
+反过来看，这也省了你挑来挑去的工夫。人住在中国大陆、用自己的身份，能开的是贝宝支付的新账户、Wise、Payoneer、万里汇这类账户；香港、美国的 PayPal 和 Stripe，本来就不在你的选项里。在能开的里面按付钱的人来挑，是完整教程[第 1 步](/guide/1-choose/)的事；开户要准备什么，看[第 2 步](/guide/2-open/)。
+
+## 借来的地址、借来的身份，会怎样
+
+既然平台认的是你本人，填一个不是你的地址、用一个不是你的身份，在协议里就是提供虚假信息。贝宝支付的跨境支付服务用户协议把这几样都列进了「受限活动」：虚假地声称自己是中国居民、年满 18 岁；用不是你本人的信息，比如姓名、地址、邮箱，开新的账户；用别人的 PayPal 账户。PayPal 认为你做了这些事，可以限制、暂停或者注销你的账户，冻结账户里的钱；按法院命令或者监管要求，冻结可以超过 180 天（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。
+
+钱被冻住以后，平台要你说明你是谁、这笔钱是怎么来的。可账户上写的身份和地址，本来就不是你的。
+
+外汇这边的规矩也是同一个意思。个人外汇账户里的钱在国内划转，只能在你自己的账户之间、你和近亲属的账户之间（[指引 第六十七条](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)）；借用别人的额度，会被列入<Term k="关注名单" />（[指引 第六十二条](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)，第 2 课讲过）。所以从收款、提现到结汇，每一步都用你自己名下的账户。
+
+## 本站为什么不教美区 PayPal
+
+常有人问，本站为什么不讲怎么开美区 PayPal。原因就写在 PayPal 美国的用户协议里，页面写的最后更新日期是 2026-11-04。它的开户条件是，个人必须是美国或其属地的居民、年满 18 岁；它列的禁止行为里，有一条是提供和你的身份、账户或生意有关的虚假、不准确或误导性的信息（[PayPal 美国用户协议](https://www.paypal.com/us/legalhub/paypal/useragreement-full)）。
+
+人住在中国大陆，本来就不符合开户条件；填一个自己并不住的美国地址去注册，按这份协议就是提供了虚假的身份信息。协议还写着，为了防范风险，或者你违反了它的可接受使用政策时，PayPal 可以把你的余额扣住最长 180 天，按法院命令还可能更久（同一份协议）。所以这条路本站不教，也不讲它的做法。想多了解一点，看[想开美区 PayPal？先看这一页](/howto/us-paypal/)。
+
+回到那位客户。他用他自己的 PayPal 付钱，你用你在国内开的账户收，两边本来就不用在同一个国家：贝宝支付的跨境支付服务用户协议，写的就是买家在中国境外的交易（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。
+
+## 做对了，也可能被暂时冻结
+
+账户用的是你自己的身份，也不等于钱永远畅通。平台觉得有风险时，可以给账户加上<Term k="账户限制" />。贝宝支付的协议（最后更新 2026-05-28）写着，因为风险设的冻结，一般从收到付款那天起最长 30 天；交易有争议时可能更久。它也写了，有时候你上传和交易有关的货运跟踪信息，PayPal 可能提前解冻，提不提前由它决定（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。所以凭证要从第一天起留好。真遇到了，看[PayPal 账户被限制或冻结怎么办](/howto/paypal-limited/)。
+
+## 三课学完了
+
+到这里，新手要知道的三件事你都知道了：钱回国走三段，每段各扣各的；5 万美元是便利化额度，不是上限；账户只能用你自己的身份开。
+
+<Callout type="tip" title="到这里就够了">
+新手要学的就这三课。网站上别的内容，遇到了再查：
+
+- 想按顺序把账户开好、把钱收回来：从完整教程的[第 0 步](/guide/0-map/)开始。
+- 想知道一笔 PayPal 付款最后到手多少：看[100 美元的 PayPal 付款，最后到手多少](/howto/paypal-100/)。
+- 一年的收入超过 5 万美元：看[一年超过 5 万美元，怎么结汇](/howto/over-quota/)。
+- 看到一篇教程，拿不准能不能照做：看[哪些教程不该照做](/howto/bad-tutorials/)。
+- 有别的疑问：看[常见问题](/faq/)。
+</Callout>
+
+## 不对怎么办
+
+<Q q="客户只有美国的 PayPal，能付给我吗？">
+
+能。他用他那边的 PayPal 付，你用自己在国内开的账户收。贝宝支付的跨境支付服务用户协议写的就是买家在中国境外的交易，只是要求这类交易要有真实的交易内容，PayPal 可以收集交易信息，并向人民银行、外汇局这些主管机构报告（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。所以把订单、合同这些留好。如果你收的是服务费，先看[第 1 课](/start/1-three-legs/)里那条提醒。
+
+</Q>
+<Q q="教程说用转运地址开户，平台不会查。">
+
+查不查，不是这件事的关键。用不是你的地址开户，按 PayPal 美国和贝宝支付自己的协议，都是提供虚假信息，账户和里面的钱都可能被冻住（见上面「借来的地址、借来的身份，会怎样」那一节）。看到这类教程，对照[哪些教程不该照做](/howto/bad-tutorials/)。
+
+</Q>
+<Q q="家里人有自己的 PayPal 账户，能不能用他的账户帮我收？">
+
+不行。贝宝支付的协议把用别人的 PayPal 账户列为受限活动（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。外汇这边，家里人能帮你的是替你跑一趟，替你办你自己额度里的结汇（[指引 第六十一条](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)，第 2 课讲过），而不是替你收钱。你的收入，就用你自己名下的账户收。
+
+</Q>
+<Q q="我以后可能会搬到国外去住。">
+
+那时候你的情况变了，能开什么账户也要按你那时真正住的地方重新看。贝宝支付的协议里，你承诺税收居民身份一有变化，就立即告诉它，不告诉的后果由你承担（[跨境支付服务用户协议](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)）。别的平台，看它们各自的协议。
+
+</Q>
