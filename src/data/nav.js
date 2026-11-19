@@ -1,5 +1,5 @@
 // 站点结构的唯一来源：左侧导航、首页路线图、上一步 / 下一步、How-to 目录、搜索都从这里读。
-// ready: false 的页面还没写，左侧导航里显示「编写中」，不给链接；写完一页改成 ready: true（check-i18n 会拦住还空着却标了 true 的页）。
+// ready: true 的页面还没写，左侧导航里显示「编写中」，不给链接；写完一页改成 ready: true（check-i18n 会拦住还空着却标了 true 的页）。
 // 中文在根路径，英文在 /en/ 下（同样的 slug）。英文文字放在各条目的 en: {} 里，用 t(x, key, lang) 取。
 
 const BASE = (import.meta.env?.BASE_URL || "/").replace(/\/$/, "");
@@ -28,36 +28,36 @@ export const SAFE = "https://www.safe.gov.cn/";
 
 // 新手入门：给第一次从海外收钱的人。三课讲三件最要紧的事，讲完再去走完整教程。
 export const LESSONS = [
-  { n: 1, slug: "1-three-legs", title: "一笔钱回国，要走三段路", minutes: "8 分钟", ready: false, sum: "谁付钱给你、钱先落在哪个账户、再怎么变成人民币到你卡上，每一段各有各的费用", en: { title: "A payment home takes three legs", minutes: "8 minutes", sum: "Who pays you, which account the money lands in first, and how it becomes RMB on your card, with a fee at each leg" } },
-  { n: 2, slug: "2-quota", title: "5 万美元额度：是什么，不是什么", minutes: "10 分钟", ready: false, sum: "这 5 万美元管的是什么、不管什么，超过了要准备哪些材料", en: { title: "The USD 50,000 quota: what it is and isn't", minutes: "10 minutes", sum: "What the USD 50,000 covers and what it doesn't, and what to bring when you go over it" } },
-  { n: 3, slug: "3-own-name", title: "账户只能用你自己的真实身份", minutes: "8 分钟", ready: false, sum: "海外的收款账户认的是你是谁、真正住在哪；用别人的地址、身份或账户会出什么事", en: { title: "Accounts only work in your own real name", minutes: "8 minutes", sum: "Providers go by who you are and where you really live, and what happens if you use someone else's address, ID or account" } },
+  { n: 1, slug: "1-three-legs", title: "一笔钱回国，要走三段路", minutes: "8 分钟", ready: true, sum: "谁付钱给你、钱先落在哪个账户、再怎么变成人民币到你卡上，每一段各有各的费用", en: { title: "A payment home takes three legs", minutes: "8 minutes", sum: "Who pays you, which account the money lands in first, and how it becomes RMB on your card, with a fee at each leg" } },
+  { n: 2, slug: "2-quota", title: "5 万美元额度：是什么，不是什么", minutes: "10 分钟", ready: true, sum: "这 5 万美元管的是什么、不管什么，超过了要准备哪些材料", en: { title: "The USD 50,000 quota: what it is and isn't", minutes: "10 minutes", sum: "What the USD 50,000 covers and what it doesn't, and what to bring when you go over it" } },
+  { n: 3, slug: "3-own-name", title: "账户只能用你自己的真实身份", minutes: "8 分钟", ready: true, sum: "海外的收款账户认的是你是谁、真正住在哪；用别人的地址、身份或账户会出什么事", en: { title: "Accounts only work in your own real name", minutes: "8 minutes", sum: "Providers go by who you are and where you really live, and what happens if you use someone else's address, ID or account" } },
 ];
 export const lessonHref = (s, lang = "zh") => link(`/start/${s.slug}/`, lang);
 
 export const STEPS = [
-  { n: 0, slug: "0-map", title: "先看清钱从哪来", minutes: "读 5 分钟", ready: false, sum: "你收的是货款、服务费、版权收入还是平台分成，付钱的人能用哪种方式付", en: { title: "Where your money comes from", minutes: "5-minute read", sum: "Whether you're paid for goods, services, royalties or platform revenue, and how your payer can pay" } },
-  { n: 1, slug: "1-choose", title: "选一个收款账户", minutes: "10 分钟", ready: false, sum: "让付钱的人来定：PayPal 的买家、电商平台、银行转账的客户，各有合适的账户", en: { title: "Pick a receiving account", minutes: "10 minutes", sum: "Let your payer decide: PayPal buyers, marketplaces and clients who wire money each fit a different account" } },
-  { n: 2, slug: "2-open", title: "用自己的身份开户", minutes: "15 分钟", ready: false, sum: "用你自己的身份证、真实地址和自己名下的银行卡注册，各家要哪些材料", en: { title: "Open it in your own name", minutes: "15 minutes", sum: "Sign up with your own ID, your real address and a bank card in your name, and what each provider asks for" } },
-  { n: 3, slug: "3-paper-trail", title: "从第一天起留好凭证", minutes: "10 分钟", ready: false, sum: "合同、订单、发票、交付记录、平台账单，结汇和账户审核都会用到", en: { title: "Keep the paper trail from day one", minutes: "10 minutes", sum: "Contracts, orders, invoices, proof of delivery and platform statements, which settlement and account reviews both ask for" } },
-  { n: 4, slug: "4-bring-home", title: "把钱换成人民币到卡上", minutes: "15 分钟", ready: false, sum: "让收款平台直接换成人民币打到卡上，或者先把美元电汇回国、再到银行结汇", en: { title: "Bring it home in RMB", minutes: "15 minutes", sum: "Let the provider pay RMB to your card, or wire USD home and settle it at your bank" } },
-  { n: 5, slug: "5-fees", title: "算清每一段的费用", minutes: "10 分钟", ready: false, sum: "收款费、换汇费、提现费分开算，每个数字记下你查的是哪一天的费用页", en: { title: "Add up each leg's fees", minutes: "10 minutes", sum: "Count the receiving, conversion and withdrawal fees separately, and note the date of the fee page each number came from" } },
+  { n: 0, slug: "0-map", title: "先看清钱从哪来", minutes: "读 5 分钟", ready: true, sum: "你收的是货款、服务费、版权收入还是平台分成，付钱的人能用哪种方式付", en: { title: "Where your money comes from", minutes: "5-minute read", sum: "Whether you're paid for goods, services, royalties or platform revenue, and how your payer can pay" } },
+  { n: 1, slug: "1-choose", title: "选一个收款账户", minutes: "10 分钟", ready: true, sum: "让付钱的人来定：PayPal 的买家、电商平台、银行转账的客户，各有合适的账户", en: { title: "Pick a receiving account", minutes: "10 minutes", sum: "Let your payer decide: PayPal buyers, marketplaces and clients who wire money each fit a different account" } },
+  { n: 2, slug: "2-open", title: "用自己的身份开户", minutes: "15 分钟", ready: true, sum: "用你自己的身份证、真实地址和自己名下的银行卡注册，各家要哪些材料", en: { title: "Open it in your own name", minutes: "15 minutes", sum: "Sign up with your own ID, your real address and a bank card in your name, and what each provider asks for" } },
+  { n: 3, slug: "3-paper-trail", title: "从第一天起留好凭证", minutes: "10 分钟", ready: true, sum: "合同、订单、发票、交付记录、平台账单，结汇和账户审核都会用到", en: { title: "Keep the paper trail from day one", minutes: "10 minutes", sum: "Contracts, orders, invoices, proof of delivery and platform statements, which settlement and account reviews both ask for" } },
+  { n: 4, slug: "4-bring-home", title: "把钱换成人民币到卡上", minutes: "15 分钟", ready: true, sum: "让收款平台直接换成人民币打到卡上，或者先把美元电汇回国、再到银行结汇", en: { title: "Bring it home in RMB", minutes: "15 minutes", sum: "Let the provider pay RMB to your card, or wire USD home and settle it at your bank" } },
+  { n: 5, slug: "5-fees", title: "算清每一段的费用", minutes: "10 分钟", ready: true, sum: "收款费、换汇费、提现费分开算，每个数字记下你查的是哪一天的费用页", en: { title: "Add up each leg's fees", minutes: "10 minutes", sum: "Count the receiving, conversion and withdrawal fees separately, and note the date of the fee page each number came from" } },
 ];
 export const stepHref = (s, lang = "zh") => link(`/guide/${s.slug}/`, lang);
 
 export const HOWTO = [
   { group: "算钱", en: { group: "Money math" }, items: [
-    { slug: "paypal-100", title: "100 美元的 PayPal 付款，最后到手多少", ready: false, en: { title: "What a USD 100 PayPal payment leaves you with" } },
+    { slug: "paypal-100", title: "100 美元的 PayPal 付款，最后到手多少", ready: true, en: { title: "What a USD 100 PayPal payment leaves you with" } },
   ]},
   { group: "回国", en: { group: "Getting it home" }, items: [
-    { slug: "wise-to-bank", title: "Wise 里的美元怎么回到国内银行卡", ready: false, en: { title: "Move USD from Wise to your Chinese bank card" } },
-    { slug: "over-quota", title: "一年超过 5 万美元，怎么结汇", ready: false, en: { title: "Settling more than USD 50,000 in a year" } },
+    { slug: "wise-to-bank", title: "Wise 里的美元怎么回到国内银行卡", ready: true, en: { title: "Move USD from Wise to your Chinese bank card" } },
+    { slug: "over-quota", title: "一年超过 5 万美元，怎么结汇", ready: true, en: { title: "Settling more than USD 50,000 in a year" } },
   ]},
   { group: "出问题了", en: { group: "When things go wrong" }, items: [
-    { slug: "paypal-limited", title: "PayPal 账户被限制或冻结怎么办", ready: false, en: { title: "When PayPal limits or freezes your account" } },
+    { slug: "paypal-limited", title: "PayPal 账户被限制或冻结怎么办", ready: true, en: { title: "When PayPal limits or freezes your account" } },
   ]},
   { group: "避坑", en: { group: "Avoiding traps" }, items: [
-    { slug: "us-paypal", title: "想开美区 PayPal？先看这一页", ready: false, en: { title: "Thinking of a US PayPal account? Read this first" } },
-    { slug: "bad-tutorials", title: "哪些教程不该照做", ready: false, en: { title: "Tutorials you shouldn't follow" } },
+    { slug: "us-paypal", title: "想开美区 PayPal？先看这一页", ready: true, en: { title: "Thinking of a US PayPal account? Read this first" } },
+    { slug: "bad-tutorials", title: "哪些教程不该照做", ready: true, en: { title: "Tutorials you shouldn't follow" } },
   ]},
 ];
 export const howtoHref = (slug, lang = "zh") => link(`/howto/${slug}/`, lang);
