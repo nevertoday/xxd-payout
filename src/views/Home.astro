@@ -1,7 +1,7 @@
 ---
-// 待写：下面的首页文案是骨架阶段的占位，写手照 docs/MAINTAINING.md 的「怎么写」重写，写完删掉这一行（npm run release 看到它会停下）。
 // 首页：先对新手说话（遇到过的事 → 三课入门 → 适不适合），最后是这个站讲的三件事，每件链到完整教程里对应的几步。
-// 事实都要出自 docs/sources/README.md 里的官方来源，附原文链接。
+// 开头的标题和导语要让人五秒内看明白：给谁看、能学到什么、本站是非官方的、不是法律或税务建议。
+// 事实都出自 docs/sources/README.md 里的官方来源。
 import Site from "../layouts/Site.astro";
 import Contact from "../components/Contact.astro";
 import { LESSONS, lessonHref, STEPS, stepHref, langOf, t } from "../data/nav.js";
@@ -11,18 +11,18 @@ const lang = langOf(Astro.url.pathname);
 const TRACK_BASE = [["Wallet", [0, 1, 2, 3]], ["Landmark", [4]], ["Calculator", [5]]];
 const ZH = {
   brand: "跨境收款新手教程",
-  h1: "海外的钱，干干净净回到自己卡上",
-  lead: ["人在中国大陆，接了海外客户的活、在海外平台开了店、做的内容有了收入，钱要先进一个海外的收款账户，再换成人民币到你自己的银行卡上。这个站把这条路一段一段讲清楚：选哪个账户，每一段收多少费用，5 万美元的额度管什么。", "这是一个非官方的学习站", "，和 PayPal、Wise、Payoneer、万里汇或任何银行都没有关系，也不是法律或税务建议。"],
+  h1: "海外的钱，怎么正规地回到你卡上",
+  lead: ["写给住在中国大陆、从海外收钱的人：接了海外客户的活，做的内容有了收入，或者在海外平台开了网店。这里讲清楚选哪个正规的收款账户，每一段扣多少钱，为什么每人每年 5 万美元的额度不是上限，钱怎么换成人民币到你自己的卡上。", "这是一个非官方、开源的学习站", "，和 PayPal、Wise、Payoneer、万里汇或任何银行都没有关系，也不是法律或税务建议。"],
   cta: ["新手从这里开始", "看完整教程"],
-  ctaNote: "新手入门一共三课：钱回国要走的三段路，5 万美元额度，为什么账户只能用你自己的身份。",
+  ctaNote: "新手入门一共三课：一笔钱回国要走的三段路，5 万美元额度是什么、不是什么，为什么账户只能用你自己的身份。",
   painH: "你是不是也遇到过这些",
   PAIN: [
-    "海外客户说用 PayPal 付你，你却不知道国内的人能开哪种账户，钱又怎么回来。",
-    "教程里的「到手费率」一个比一个低，自己算下来却对不上。",
+    "海外客户说用 PayPal 付你，你却不知道住在国内能开哪种账户，钱又怎么回来。",
+    "客户付了 100 美元，到你卡上的人民币却比按汇率算的少，不知道少在哪一段。",
     "听说一年只能换 5 万美元，收入快到这个数了，心里发慌。",
   ],
   lessonsH: "新手只要三课",
-  lessonsP: "按顺序看，一共二十多分钟。学完你会知道一笔钱回国要经过哪几段、每一段的费用去哪里查，5 万美元额度到底管什么，也知道为什么开户只能用你自己的身份和真实地址。网站上别的内容，遇到了再查。",
+  lessonsP: "按顺序看，一共二十多分钟。学完你会知道一笔钱回国要经过哪三段、每一段的费用去哪里查，5 万美元额度管什么、不管什么，也知道为什么开户只能用你自己的身份和真实地址。网站上别的内容，遇到了再查。",
   lessonsLabel: "新手入门：共 3 课",
   fitH: "适不适合你", yesH: "适合", noH: "本站不教",
   YES: ["你住在中国大陆，用自己的身份证和自己名下的银行卡", "你收的是真实的收入：接活的服务费、内容收入、网店的货款", "你想先弄懂规则和费用，再决定开哪个账户"],
@@ -39,18 +39,18 @@ const ZH = {
 };
 const EN = {
   brand: "Getting paid from abroad, for beginners",
-  h1: "Money from abroad, home to your own card, the clean way",
-  lead: ["You live in mainland China and you've earned money abroad: a client overseas, a shop on a foreign marketplace, income from what you publish. The money first lands in a receiving account abroad, then becomes RMB on your own bank card. This site walks that route one leg at a time: which account to pick, what each leg costs, and what the USD 50,000 quota does. ", "This is an unofficial guide", ", not affiliated with PayPal, Wise, Payoneer, WorldFirst or any bank, and not legal or tax advice."],
+  h1: "Getting money from abroad onto your own card, the legitimate way",
+  lead: ["For people who live in mainland China and get paid from abroad: a client overseas, income from what you publish, or a shop on a foreign marketplace. This site explains which legitimate receiving account to pick, what each leg of the trip costs, why the USD 50,000 yearly quota isn't a ceiling, and how the money becomes RMB on your own card. ", "This is an unofficial, open-source guide", ", not affiliated with PayPal, Wise, Payoneer, WorldFirst or any bank, and not legal or tax advice."],
   cta: ["Start here if you're new", "Go to the full guide"],
-  ctaNote: "The beginner track is three lessons: the three legs a payment takes home, the USD 50,000 quota, and why an account only works in your own name.",
+  ctaNote: "The beginner track is three lessons: the three legs a payment takes home, what the USD 50,000 quota is and isn't, and why an account only works in your own name.",
   painH: "Has this happened to you?",
   PAIN: [
-    "A client abroad wants to pay you by PayPal, and you don't know which account someone in China can open, or how the money gets home.",
-    "Every tutorial quotes a lower \"take-home rate\", and your own sums never match.",
+    "A client abroad wants to pay you by PayPal, and you don't know which account you can open living in China, or how the money gets home.",
+    "A client paid you USD 100, the RMB on your card is less than the exchange rate says it should be, and you can't tell which leg it went missing on.",
     "You heard you can only change USD 50,000 a year, and your income is getting close.",
   ],
   lessonsH: "Beginners need just three lessons",
-  lessonsP: "Read them in order, about 25 minutes in all. By the end you'll know which legs a payment passes through on its way home and where to look up each leg's fee, what the USD 50,000 quota really covers, and why you can only open an account with your own identity and real address. Everything else on the site is there to look up when you need it.",
+  lessonsP: "Read them in order, about 25 minutes in all. By the end you'll know the three legs a payment takes on its way home and where to look up each leg's fee, what the USD 50,000 quota covers and what it doesn't, and why you can only open an account with your own identity and real address. Everything else on the site is there to look up when you need it.",
   lessonsLabel: "Beginner track: 3 lessons",
   fitH: "Is it for you?", yesH: "Yes, if", noH: "This site won't teach",
   YES: ["You live in mainland China and use your own ID and a bank card in your own name", "The money is real income: fees for your work, creator income, sales from your shop", "You want to understand the rules and the fees before you pick an account"],

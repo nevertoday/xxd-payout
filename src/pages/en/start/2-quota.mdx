@@ -1,5 +1,90 @@
 ---
 layout: ../../../layouts/Lesson.astro
+tldr: "The USD 50,000 a year is the part you can settle with just your ID. It's called a facilitation quota, and it isn't the most you can change in a year. For real income above it, bring contracts and payment records and the bank can still settle it."
 lesson: 2
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+It's November, and a client has just paid you again. You open your banking app to settle the money and check this year's quota while you're there. There's only a few thousand dollars left. Your stomach drops. Does that mean the money you earn over the next month or so can't come home?
+
+It can. Plenty of people have heard "you can only change USD 50,000 a year", but that isn't what SAFE, China's foreign exchange regulator, says.
+
+## What the USD 50,000 is
+
+Its full name is the <Term k="年度便利化额度" text="annual facilitation quota" />. As of 2026-11-19, SAFE's rules give each person a quota of USD 50,000 equivalent a year for <Term k="结汇" /> (turning foreign currency into RMB) and a separate one of the same size for <Term k="购汇" /> with RMB ([implementing rules, article 2](http://m.safe.gov.cn/safe/2007/0105/5320.html); [current account guide, article 54](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Within the quota, your own ID is all you need, at the bank counter, in online banking or in the mobile app ([guide, article 55](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+"Facilitation" is the key word. It means the paperwork is simplest below this number. It doesn't mean you're stopped above it.
+
+<mark><strong>The USD 50,000 is the part of a year's settlements you can do with just your ID, not the most you can change in a year. For real income above it, bring the documents and the bank can still settle it.</strong></mark>
+
+SAFE's Xiamen branch puts it most plainly in its Q&A: "等值 5 万美元是年度便利化额度，不是个人每年结汇、购汇的限额" (the USD 50,000 equivalent is an annual facilitation quota, not a limit on what an individual can settle or buy each year). The same Q&A covers a few smaller points too. The quota runs by calendar year, from 1 January to 31 December. Whatever you don't use is cleared at the end of the year and doesn't carry over. And you can check what's left in your bank's mobile or online banking, or by taking your ID to any bank branch that handles personal FX ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)).
+
+## It's about the moment you change money
+
+The quota covers settling and buying foreign currency, which is the moment money changes currency. When a client pays US dollars into your foreign currency account, that step doesn't touch the quota. The same Xiamen Q&A is clear that for people in China receiving money from abroad, there's no such thing as an amount or count limit, and how much you can receive depends on whether there's a real, compliant transaction behind it ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). It's only when you sell those dollars to the bank for RMB that the USD 50,000 comes into it.
+
+## Above it, take documents to the bank
+
+When your real income goes past USD 50,000, the rules give you a way through: bring your ID, plus documents that show the transaction amount and where the money came from, and settle it at the bank ([personal FX measures, article 9](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)). Article 56 of the guide adds that a settlement made with documents like these doesn't use the annual quota at all ([guide](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+Which documents? Article 10 of the implementing rules has a table by type of income, and Bank of China's [personal settlement page](https://www.boc.cn/pbservice/pb4/200806/t20080626_758.html) lists the same table. These are the lines closest to freelance and creator income ([implementing rules, article 10](http://m.safe.gov.cn/safe/2007/0105/5320.html)):
+
+- Income from proprietary rights and licensing: proof of payment, plus an agreement or contract.
+- Income from legal, accounting, consulting and public relations services: proof of payment, plus an agreement or contract.
+- Employee pay: the employment contract and proof of income.
+- Other: relevant proof and payment records.
+
+This site won't tell you which line your income falls under. Article 68 of the guide says the bank handling your settlement reviews your documents and decides, based on your situation, which ones it needs to see. If it doubts the transaction is real, it can refuse, but it has to tell you why and how to appeal ([guide, article 68](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). So the first time you settle above the quota, call your bank and ask what to bring. At the counter, just explain it the way you'd say it to anyone: "I do design work for clients through an overseas platform. This is a client's payment for my work, and I've brought the contract and the payment record. I'd like to settle these dollars into RMB." For the details, see [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+
+## Some money doesn't use the quota at all
+
+The rules name two cases that don't use the annual quota.
+
+One is cross-border e-commerce. An individual selling across borders who settles through their own foreign currency account, with documents showing the transaction amounts or the electronic transaction records, doesn't use the annual quota ([guide, article 66](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+The other is going through a <Term k="支付机构" />. Article 137 of the guide says personal FX settled under a payment institution's FX business doesn't count toward the annual facilitation quota ([guide](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+
+Whether the RMB a particular provider pays to your card is this kind of settlement is another matter. 贝宝支付 (PayPal's company in Beijing), for example, is a non-bank payment institution licensed by the People's Bank of China. But PayPal's fee centre says the conversion is done either by "PayPal服务合作方在中国境外" (a PayPal partner outside China) or by "中国境内合作银行" (a partner bank in China), and no PayPal page says which category its cross-border payout falls under ([fee centre](https://www.paypal.cn/portal/fees?locale.x=zh)). PayPal's pages don't say. Before you rely on it, ask PayPal China or your bank, ideally for an answer in writing. The same goes for Payoneer, WorldFirst and the rest: ask them directly.
+
+<Callout type="no" title="Don't split, don't borrow">
+To stay clear of the quota, some people split one large amount into several small ones, or borrow a relative's or friend's quota. The rules rule out both. Article 7 of the personal FX measures says you may not split amounts or use other methods to evade limits, nor use false business documents to evade authenticity checks ([measures](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)). Article 62 of the guide says anyone who uses someone else's quota goes straight onto SAFE's <Term k="关注名单" />, and for that year and the next two, every settlement or purchase needs documents showing the transaction amount. Anyone who lends their quota gets a risk warning first, and goes on the list if they do it again ([guide](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)).
+</Callout>
+
+## Next lesson
+
+The USD 50,000 is a line where "just your ID" stops working. It isn't a wall. Past that line, what you do is bring documents and explain where the money came from, which is why it pays to keep your paper trail from day one ([step 3](/en/guide/3-paper-trail/) of the full guide). [Lesson 3](/en/start/3-own-name/) covers the last thing, and the most basic one: why an account only works in your own name.
+
+## If something's off
+
+<Q q="Settling in my banking app, I got a message that I'm over the quota.">
+
+That means the part you can settle with just your ID is used up for this year. It doesn't mean this money can't be settled. Take your ID and the documents for this payment, such as the contract, invoice and payment record, to the bank counter. The bank decides which documents it needs ([guide, articles 56 and 68](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). See [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+
+</Q>
+<Q q="I don't know which type my income counts as.">
+
+That isn't yours to decide. How the table in article 10 of the implementing rules applies to your payment is up to the bank handling it ([guide, article 68](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)), and this site won't pick a category for you either. What you can do is have the whole story of the payment ready: the contract or order with your client, the invoice you sent, the payment record from the platform or client. Then ask the bank what else it needs.
+
+</Q>
+<Q q="PayPal's cross-border payout shows a 可收款额度 (amount you can pay out). Is that the USD 50,000?">
+
+No. That's PayPal's own estimate of how much you can pay out to China, based on your account information and transaction records. It's usually updated once a day and never exceeds your available balance ([PayPal cross-border payout FAQ](https://www.paypal.cn/portal/merchant/rmb-transfer/faq?locale.x=zh)). It has nothing to do with SAFE's annual facilitation quota.
+
+</Q>
+<Q q="Someone said each settlement has to stay under 50,000, or that you can only settle a few times a year.">
+
+That doesn't match what SAFE says. The Xiamen Q&A says the USD 50,000 isn't a limit and that there's no amount or count limit on receiving money from abroad, and the same Q&A says individuals may not split amounts to get around supervision ([SAFE Xiamen tips](https://www.safe.gov.cn/xiamen/file/file/20211022/f4794075e84e40dd9394be523a52731b.pdf)). Deliberately breaking one amount into several so that each stays under a number is exactly what article 7 of the measures forbids ([measures](https://www.safe.gov.cn/tianjin/2024/0430/2465.html)).
+
+</Q>
+<Q q="I've used up this year's quota. Can I use a family member's?">
+
+No borrowing. Each person's quota is their own, and using someone else's quota to change your money puts you on the watch list under article 62 of the guide. What family can do is run the errand for you. Article 61 lets a close relative (your spouse, parents, children, siblings, grandparents or grandchildren) settle money within your own quota on your behalf, bringing both your IDs, your written authorisation and proof of the relationship ([guide](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)). Anything above your quota still goes through with transaction documents.
+
+</Q>
+<Q q="Do I pay tax once my income goes over USD 50,000?">
+
+That's a tax question, which this site doesn't cover. Ask your local tax authority or a professional.
+
+</Q>

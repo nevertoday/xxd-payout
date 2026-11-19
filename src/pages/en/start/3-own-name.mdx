@@ -1,5 +1,86 @@
 ---
 layout: ../../../layouts/Lesson.astro
+tldr: "When you open a receiving account, the provider goes by who you are and where you really live. So an account only works opened with your own ID and your real address, and your money only goes into accounts in your own name."
 lesson: 3
 ---
-{/* 待写 TBD: body. See docs/MAINTAINING.md (voice and hard rules); facts and their links are in docs/sources/README.md. */}
+import Callout from "../../../components/Callout.astro";
+import Term from "../../../components/Term.astro";
+import Q from "../../../components/Q.astro";
+
+Your client in the US mentions it in passing: "Do you have a US PayPal? That would make paying you easier." You search online and find plenty of tutorials. Some say you can sign up with a US mail-forwarding address, and it sounds like nothing more than typing a different address into a box.
+
+But that address box is asking the most important question of the whole sign-up.
+
+## When you sign up, the provider is asking who you are
+
+Before a provider opens an account, it wants to know who you are and where you live, and that decides which account, if any, you can have. Read through their agreements and help pages and they all say it:
+
+- **贝宝支付** (the new accounts on paypal.cn) says an individual must be a Chinese resident aged 18 or over, and that account holders can only be Chinese tax residents, never US tax residents ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh), last updated 2026-05-28). Signing up takes a mainland ID card and an 11-digit mainland mobile number, and the face check has to be done by you, scanning the code yourself ([personal seller sign-up guide](https://objects.paypal.cn/ppcn-martech-infostore/assets/PayPal%E4%B8%AD%E5%9B%BD%E4%B8%AA%E4%BA%BA%E5%8D%96%E5%AE%B6%E6%B3%A8%E5%86%8C%E6%8C%87%E5%8D%97.pdf)).
+- **PayPal Hong Kong** only opens personal accounts for residents of Hong Kong SAR aged 18 or over ([Hong Kong user agreement](https://www.paypal.com/hk/legalhub/paypal/useragreement-full?locale.x=en_HK), last updated 2026-05-28).
+- **PayPal US** only opens personal accounts for residents of the United States or its territories, also aged 18 or over ([US user agreement](https://www.paypal.com/us/legalhub/paypal/useragreement-full), last updated 2026-11-04).
+- **Stripe**'s list of supported countries and regions includes Hong Kong but not mainland China ([Stripe global availability](https://stripe.com/global)).
+- **Wise** decides whether you can get USD account details by which country your address is in ([Wise help page](https://wise.com/help/articles/2810318/can-i-get-usd-account-details)).
+- **Payoneer** (派安盈), for a mainland individual account, wants the bank account you withdraw to in your own name, with your Chinese name, pinyin name and ID number matching what you entered earlier ([individual account sign-up guide](https://www.payoneer.com/zh-hans/resources/how-to-use-payoneer/how-to-register-an-individual-account/), last modified 2025-04-01).
+
+The wording is different every time, but the question is the same:
+
+<mark><strong>A provider decides whether you can open an account by who you are and where you really live. So the account has to be in your own name, with your own ID and your real address.</strong></mark>
+
+Looked at the other way, this saves you a lot of comparing. If you live in mainland China and sign up as yourself, the accounts open to you are the likes of the new 贝宝支付 accounts, Wise, Payoneer and WorldFirst. PayPal Hong Kong, PayPal US and Stripe were never on your list. Choosing among the ones you can open, by who pays you, is [step 1](/en/guide/1-choose/) of the full guide, and what to have ready to open one is [step 2](/en/guide/2-open/).
+
+## What happens with a borrowed address or identity
+
+Since the provider goes by who you are, an address that isn't yours or an identity that isn't yours is false information under its agreement. 贝宝支付's cross-border user agreement lists these among its restricted activities: falsely claiming to be a Chinese resident aged 18 or over; opening a new account with information that isn't your own, such as a name, address or email; and using someone else's PayPal account. If PayPal believes you've done any of these, it can limit, suspend or close your account and freeze the money in it, and under a court order or a regulator's requirement, the freeze can last longer than 180 days ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+Once the money is frozen, the provider asks you to explain who you are and where the money came from. But the identity and address on the account were never yours.
+
+China's FX rules point the same way. Money in a personal foreign currency account can only move within China between your own accounts, or between you and close relatives ([guide, article 67](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf)), and using someone else's quota puts you on the <Term k="关注名单" /> ([guide, article 62](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf), covered in lesson 2). So from receiving the money, to withdrawing it, to settling it, use accounts in your own name at every step.
+
+## Why this site doesn't teach a US PayPal account
+
+People often ask why this site doesn't explain how to open a US PayPal account. The reason is in PayPal's US user agreement, which says it was last updated on 2026-11-04. To open an account, it says, an individual "must be a resident of the United States or one of its territories" and be at least 18. And among its restricted activities is providing false, inaccurate or misleading information about your identity, account or business ([PayPal US user agreement](https://www.paypal.com/us/legalhub/paypal/useragreement-full)).
+
+If you live in mainland China, you don't meet the first condition to begin with, and signing up with a US address you don't live at is false identity information under that agreement. The agreement also says PayPal can hold your balance for up to 180 days if it reasonably needs to protect against risk, or if you've broken its Acceptable Use Policy, and longer under a court order (same agreement). So this site doesn't teach that route or describe how it's done. For more, see [Thinking of a US PayPal account? Read this first](/en/howto/us-paypal/).
+
+Back to that client. They pay from their own PayPal, you receive with the account you opened in China, and the two were never meant to be in the same country. 贝宝支付's cross-border user agreement is written for exactly this, a buyer outside China ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)).
+
+## Doing it right can still mean a temporary freeze
+
+An account in your own name doesn't mean the money always flows freely. When a provider sees a risk, it can put an <Term k="账户限制" /> on your account. 贝宝支付's agreement (last updated 2026-05-28) says a risk-based hold usually lasts up to 30 days from the day the payment arrives, and longer if the transaction is disputed. It also says that uploading shipping tracking for the transaction can sometimes get funds released early, at PayPal's discretion ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). That's one more reason to keep your paper trail from day one. If it happens to you, see [When PayPal limits or freezes your account](/en/howto/paypal-limited/).
+
+## You've finished the three lessons
+
+You now know the three things a beginner needs: money takes three legs home and each leg takes its own cut; the USD 50,000 is a facilitation quota, not a ceiling; and an account only works opened as yourself.
+
+<Callout type="tip" title="That's all you need">
+These three lessons are everything a beginner needs. Everything else on the site is there to look up when it comes up:
+
+- Ready to open an account and bring the money home, in order: start at [step 0](/en/guide/0-map/) of the full guide.
+- Want to know what a PayPal payment leaves you with: see [What a USD 100 PayPal payment leaves you with](/en/howto/paypal-100/).
+- Earning more than USD 50,000 in a year: see [Settling more than USD 50,000 in a year](/en/howto/over-quota/).
+- Not sure whether to follow a tutorial you found: see [Tutorials you shouldn't follow](/en/howto/bad-tutorials/).
+- Any other questions: see the [FAQ](/en/faq/).
+</Callout>
+
+## If something's off
+
+<Q q="My client only has a US PayPal. Can they pay me?">
+
+Yes. They pay from their PayPal, and you receive with the account you opened in China. 贝宝支付's cross-border user agreement is written for buyers outside China. It asks that such transactions have real transaction content, and says PayPal can collect transaction information and report it to authorities including the People's Bank of China and SAFE ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). So keep your orders and contracts. If you're paid for services, read the note in [lesson 1](/en/start/1-three-legs/) first.
+
+</Q>
+<Q q="A tutorial says you can sign up with a forwarding address and nobody checks.">
+
+Whether anyone checks isn't the point. Signing up with an address that isn't yours is false information under both PayPal US's and 贝宝支付's own agreements, and the account and the money in it can be frozen (see "What happens with a borrowed address or identity" above). When you find a tutorial like that, hold it up against [Tutorials you shouldn't follow](/en/howto/bad-tutorials/).
+
+</Q>
+<Q q="A family member has their own PayPal account. Can they receive money for me?">
+
+No. 贝宝支付's agreement lists using someone else's PayPal account as a restricted activity ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). On the FX side, what family can do is run the errand of settling money within your own quota for you ([guide, article 61](http://m.safe.gov.cn/safe/file/file/20200831/f0127756271c43ef9b3908d5d157bd91.pdf), covered in lesson 2), not receive the money for you. Your income goes into an account in your own name.
+
+</Q>
+<Q q="I might move abroad some day.">
+
+Then your situation changes, and which accounts you can open has to be looked at again for where you really live by then. Under 贝宝支付's agreement, you promise to tell PayPal straight away if your tax residency changes, and you bear the consequences if you don't ([cross-border user agreement](https://www.paypal.cn/portal/paypal-unified-account-ua?locale.x=zh)). For other providers, check their own agreements.
+
+</Q>
