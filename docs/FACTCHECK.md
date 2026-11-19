@@ -22,3 +22,8 @@ The site at /Volumes/T7-usb/js/xxd-payout is an unofficial learning site for peo
 - Fix problems directly in your files only, with the smallest edit: correct, soften to what the source says, or delete. Keep the voice and the rules in `docs/MAINTAINING.md`. Edit zh and en together.
 - Don't start any server. Don't commit. Don't touch files outside your list.
 - Report: each change (file:line, old claim, what the source says with file and a few words, new text), borderline claims you kept, and counts (claims checked, changed, deleted).
+
+## Already settled by the maintainer (don't re-open; do check pages state them this way)
+- PayPal fee centre, conversion tab, as displayed on 2026-11-19 (`raw/official/paypal-cn/paypalcn-fees-browser-2026-11-19.md`): the conversion is done by PayPal's service partner outside China, the fee is inside the exchange rate, no separate service fee; USD/HKD→RMB 0% offer 2026-01-15 to 2026-12-31 (Beijing time), standard 0.2%; other currencies 2.5%. A "scenario B" (domestic partner bank, separate service fee, offer to 2025-12-31) exists only in the page's hidden data; pages must not present it.
+- Wise lists China among destinations with predicted correspondent fees, so the Swift payout fee to China is USD 7.65 (`raw/official/wise/usd-swift-cost-en.md`, table near "China"); the 6.15 example is for destinations without predicted fees.
+- PayPal's word for a reserve is 准备金.
